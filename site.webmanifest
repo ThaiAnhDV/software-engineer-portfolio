@@ -1,0 +1,17 @@
+{
+  "name": "Đặng Văn Thái Anh Portfolio",
+  "short_name": "Portfolio",
+  "description": "Software Engineer Portfolio",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#0d6efd",
+  "icons": [
+    {
+      "src": "assets/icons/favicon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any"
+    }
+  ]
+}

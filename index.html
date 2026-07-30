@@ -1,0 +1,667 @@
+<!DOCTYPE html>
+<html lang="en" data-bs-theme="light">
+<head>
+  <!-- =========================================================
+       META TAGS
+       ========================================================= -->
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+    <!-- SEO Meta Tags (Populated from JSON)
+         Path syntax: <root>.<key>[.<subkey>] resolved against this.data.
+         Example: data-json="profile.seo.author" reads data.profile.seo.author. -->
+    <meta name="robots" content="index, follow" />
+    <meta name="author" content="" data-json="profile.seo.author" />
+    <meta name="keywords" content="" data-json="profile.seo.keywords" />
+    <meta name="description" content="" data-json="profile.seo.description" />
+    <meta name="theme-color" content="" data-json="profile.seo.theme_color" />
+
+    <!-- Open Graph / Social Meta Tags -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="" data-json="profile.seo.canonical_url" />
+    <meta property="og:title" content="" data-json="profile.seo.title" />
+    <meta property="og:description" content="" data-json="profile.seo.description" />
+    <meta property="og:image" content="" data-json="profile.seo.og_image" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:locale" content="" data-json="profile.seo.locale" />
+    <meta property="og:site_name" content="" data-json="profile.branding.site_name" />
+
+    <!-- Twitter Card Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:url" content="" data-json="profile.seo.canonical_url" />
+    <meta name="twitter:title" content="" data-json="profile.seo.title" />
+    <meta name="twitter:description" content="" data-json="profile.seo.description" />
+    <meta name="twitter:image" content="" data-json="profile.seo.og_image" />
+
+  <!-- Twitter Card Meta Tags -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:url" content="" data-json="profile.seo.canonical_url" />
+  <meta name="twitter:title" content="" data-json="profile.seo.title" />
+  <meta name="twitter:description" content="" data-json="profile.seo.description" />
+  <meta name="twitter:image" content="" data-json="profile.seo.og_image" />
+
+  <!-- Canonical URL -->
+  <link rel="canonical" href="" data-json="profile.seo.canonical_url" />
+
+  <!-- =========================================================
+       FAVICON
+       ========================================================= -->
+  <link rel="icon" type="image/svg+xml" href="assets/icons/favicon.svg" />
+  <link rel="icon" type="image/png" sizes="32x32" href="assets/icons/favicon-32x32.png" />
+  <link rel="icon" type="image/png" sizes="16x16" href="assets/icons/favicon-16x16.png" />
+  <link rel="apple-touch-icon" sizes="180x180" href="assets/icons/apple-touch-icon.png" />
+  <link rel="manifest" href="site.webmanifest" />
+
+  <!-- =========================================================
+       STYLESHEETS
+       ========================================================= -->
+  <!-- Bootstrap 5 CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous" />
+
+  <!-- ICON LIBRARY (single source of truth for all icons in this project)
+       Use ONLY Bootstrap Icons. Do not mix Font Awesome, Heroicons, or
+       custom icon libraries anywhere in the markup or JavaScript. -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" />
+
+  <!-- Google Fonts: Inter -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
+
+  <!-- Project Stylesheets -->
+  <link rel="stylesheet" href="assets/css/global.css" />
+  <link rel="stylesheet" href="assets/css/responsive.css" />
+  <link rel="stylesheet" href="assets/css/components.css" />
+
+  <!-- =========================================================
+       TITLE (Populated from JSON)
+       ========================================================= -->
+  <title></title>
+</head>
+
+<body>
+  <!-- Skip to main content (Accessibility) -->
+  <a href="#main-content" class="skip-link">Skip to main content</a>
+
+  <!-- =========================================================
+       NAVIGATION
+       ========================================================= -->
+  <header id="site-header" class="site-header">
+    <nav class="navbar navbar-expand-lg" aria-label="Primary navigation">
+      <div class="container">
+        <!-- Logo -->
+        <a class="navbar-brand" href="#home" aria-label="Home">
+          <img class="brand-logo" src="assets/icons/logo.svg" alt="TA — Software Engineer Portfolio" width="40" height="40" />
+        </a>
+
+        <!-- Mobile Toggle -->
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#primary-menu" aria-controls="primary-menu" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <!-- Navigation Menu -->
+        <div class="collapse navbar-collapse" id="primary-menu">
+          <ul class="navbar-nav ms-auto">
+            <li class="nav-item">
+              <a class="nav-link" href="#home" data-section="home">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#about" data-section="about">About</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#skills" data-section="skills">Skills</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#projects" data-section="projects">Projects</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#experience" data-section="experience">Experience</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#certificates" data-section="certificates">Certificates</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#contact" data-section="contact">Contact</a>
+            </li>
+          </ul>
+
+          <!-- Theme Toggle -->
+          <div class="theme-toggle-wrapper ms-lg-3">
+            <button class="theme-toggle" id="theme-toggle" aria-label="Toggle theme" title="Toggle dark/light mode">
+              <i class="bi bi-moon-fill" aria-hidden="true"></i>
+            </button>
+          </div>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <!-- =========================================================
+       MAIN CONTENT
+       ========================================================= -->
+  <main id="main-content">
+
+    <!-- =====================================================
+         HOME SECTION
+         ===================================================== -->
+    <section id="home" class="hero-section">
+      <div class="container">
+        <div class="row align-items-center min-vh-100 py-5">
+
+          <!-- Hero Content -->
+          <div class="col-lg-7 order-2 order-lg-1">
+            <div class="hero-content">
+              <!-- Greeting -->
+              <p class="hero-greeting" data-json="profile.hero.greeting">
+                <span class="hero-greeting-line"></span>
+              </p>
+
+              <!-- Name -->
+              <h1 class="hero-name" data-json="profile.meta.author"></h1>
+
+              <!-- Title (rendered into #typewriter by renderer from profile.meta.author_title) -->
+              <h2 class="hero-title">
+                <span class="typewriter" id="typewriter"></span>
+              </h2>
+
+              <!-- Description -->
+              <p class="hero-description" data-json="profile.hero.headline"></p>
+
+              <!-- CTA Buttons -->
+              <div class="hero-cta">
+                <a href="#" class="btn btn-primary btn-lg" data-json="profile.hero.cta_primary.href">
+                  <i class="bi bi-folder me-2"></i>
+                </a>
+                <a href="#" class="btn btn-outline-primary btn-lg" data-json="profile.hero.cta_secondary.href">
+                  <i class="bi bi-envelope me-2"></i>
+                </a>
+              </div>
+
+              <!-- Social Links (renderer injects SVG <img> or icon, sets href and aria-label) -->
+              <div class="hero-social">
+                <a href="#" target="_blank" rel="noopener noreferrer" class="hero-social-link"></a>
+                <a href="#" target="_blank" rel="noopener noreferrer" class="hero-social-link"></a>
+                <a href="#" class="hero-social-link"></a>
+                <a href="#" target="_blank" class="hero-social-link"></a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Hero Image -->
+          <div class="col-lg-5 order-1 order-lg-2 mb-5 mb-lg-0">
+            <div class="hero-image-wrapper">
+              <div class="hero-image-backdrop"></div>
+              <div class="hero-image-container">
+                <img
+                  src="assets/images/avatar/avatar-large.webp"
+                  alt=""
+                  class="hero-image"
+                  width="400"
+                  height="500"
+                  loading="eager"
+                />
+              </div>
+              <!-- Floating Badge -->
+              <div class="hero-badge">
+                <i class="bi bi-code-slash"></i>
+                <span data-json="profile.hero.availability"></span>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- Scroll Indicator -->
+      <a href="#about" class="scroll-indicator" aria-label="Scroll to About section">
+        <span class="scroll-indicator-text">Scroll Down</span>
+        <div class="scroll-indicator-mouse">
+          <div class="scroll-indicator-wheel"></div>
+        </div>
+      </a>
+
+    </section>
+
+    <!-- =====================================================
+         ABOUT SECTION
+         ===================================================== -->
+    <section id="about" class="about-section">
+      <div class="container">
+
+        <!-- Section Header -->
+        <header class="section-header text-center mb-5">
+          <p class="section-subtitle" data-json="about.about.section_subtitle"></p>
+          <h2 class="section-title" data-json="about.about.section_title"></h2>
+        </header>
+
+        <div class="row align-items-center g-5">
+
+          <!-- Profile Photo -->
+          <div class="col-lg-5">
+            <div class="about-image-wrapper">
+              <div class="about-image-container">
+                <img
+                  src="assets/images/avatar/avatar.webp"
+                  alt=""
+                  class="about-image"
+                  width="400"
+                  height="500"
+                  loading="lazy"
+                />
+              </div>
+              <div class="about-image-decoration about-image-decoration-1"></div>
+              <div class="about-image-decoration about-image-decoration-2"></div>
+            </div>
+          </div>
+
+          <!-- About Content -->
+          <div class="col-lg-7">
+            <div class="about-content">
+
+              <!-- Introduction -->
+              <div class="about-block mb-5">
+                <h3 class="about-block-title">
+                  <i class="bi bi-person-circle me-2"></i>Introduction
+                </h3>
+                <p class="about-text" data-json="about.about.introduction.0"></p>
+                <p class="about-text mb-0" data-json="about.about.introduction.1"></p>
+              </div>
+
+              <!-- Career Objective -->
+              <div class="about-block mb-5">
+                <h3 class="about-block-title">
+                  <i class="bi bi-bullseye me-2"></i>Career Objective
+                </h3>
+                <p class="about-text mb-0" data-json="about.about.career_objective"></p>
+              </div>
+
+              <!-- Quick Info -->
+              <div class="about-block mb-5">
+                <h3 class="about-block-title">
+                  <i class="bi bi-info-circle me-2"></i>Quick Info
+                </h3>
+                <div class="row g-3">
+                  <div class="col-6 col-md-3">
+                    <div class="about-quick-info">
+                      <span class="about-quick-info-value"></span>
+                      <span class="about-quick-info-label">Age</span>
+                    </div>
+                  </div>
+                  <div class="col-6 col-md-3">
+                    <div class="about-quick-info">
+                      <span class="about-quick-info-value"></span>
+                      <span class="about-quick-info-label">Location</span>
+                    </div>
+                  </div>
+                  <div class="col-6 col-md-3">
+                    <div class="about-quick-info">
+                      <span class="about-quick-info-value"></span>
+                      <span class="about-quick-info-label">Experience</span>
+                    </div>
+                  </div>
+                  <div class="col-6 col-md-3">
+                    <div class="about-quick-info">
+                      <span class="about-quick-info-value"></span>
+                      <span class="about-quick-info-label">Degree</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- CTA -->
+              <div class="about-cta">
+                <a href="#" class="btn btn-outline-primary">
+                  <i class="bi bi-envelope me-2"></i>Contact Me
+                </a>
+              </div>
+
+            </div>
+          </div>
+
+        </div>
+
+        <!-- Education Timeline (data sourced from experience.json > education) -->
+        <div class="about-education mt-5 pt-5">
+          <header class="section-header text-center mb-5">
+            <p class="section-subtitle" data-json="about.education.section_subtitle"></p>
+            <h3 class="section-title-sm" data-json="about.education.section_title"></h3>
+          </header>
+
+          <div class="row justify-content-center">
+            <div class="col-lg-10">
+              <ol class="timeline timeline-education" aria-label="Education history">
+                <!-- Populated from experience.json → education -->
+              </ol>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- =====================================================
+         SKILLS SECTION
+         ===================================================== -->
+    <section id="skills" class="skills-section">
+      <div class="container">
+
+        <!-- Section Header -->
+        <header class="section-header text-center mb-5">
+          <p class="section-subtitle" data-json="about.skills.section_subtitle"></p>
+          <h2 class="section-title" data-json="about.skills.section_title"></h2>
+        </header>
+
+        <!-- Skills Grid -->
+        <div class="skills-grid row g-4">
+          <!-- Populated from JSON -->
+        </div>
+
+        <!-- Additional Skills Row -->
+        <div class="row g-5 mt-5">
+
+          <!-- Tools -->
+          <div class="col-md-6">
+            <div class="additional-skills-card">
+              <h3 class="additional-skills-title">
+                <i class="bi bi-tools me-2"></i>Tools
+              </h3>
+              <div class="tools-grid">
+                <!-- Populated from JSON -->
+              </div>
+            </div>
+          </div>
+
+          <!-- Languages -->
+          <div class="col-md-6">
+            <div class="additional-skills-card">
+              <h3 class="additional-skills-title">
+                <i class="bi bi-globe me-2"></i>Languages
+              </h3>
+              <div class="languages-grid">
+                <!-- Populated from JSON -->
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- =====================================================
+         PROJECTS SECTION
+         ===================================================== -->
+    <section id="projects" class="projects-section">
+      <div class="container">
+
+        <!-- Section Header -->
+        <header class="section-header text-center mb-5">
+          <p class="section-subtitle" data-json="about.projects.section_subtitle"></p>
+          <h2 class="section-title" data-json="about.projects.section_title"></h2>
+        </header>
+
+        <!-- Projects Grid - Featured Row (Large Cards) -->
+        <div class="projects-featured mb-5">
+          <div class="row g-4">
+            <!-- Populated from JSON (Featured Project) -->
+          </div>
+        </div>
+
+        <!-- Projects Grid - Standard Cards -->
+        <div class="projects-grid">
+          <div class="row g-4">
+            <!-- Populated from JSON -->
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- =====================================================
+         EXPERIENCE SECTION
+         ===================================================== -->
+    <section id="experience" class="experience-section">
+      <div class="container">
+
+        <!-- Section Header -->
+        <header class="section-header text-center mb-5">
+          <p class="section-subtitle" data-json="about.experience.section_subtitle"></p>
+          <h2 class="section-title" data-json="about.experience.section_title"></h2>
+        </header>
+
+        <div class="row justify-content-center">
+          <div class="col-lg-10">
+            <ol class="timeline" aria-label="Work experience timeline">
+              <!-- Populated from JSON -->
+            </ol>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- =====================================================
+         CERTIFICATES SECTION
+         ===================================================== -->
+    <section id="certificates" class="certificates-section">
+      <div class="container">
+
+        <!-- Section Header -->
+        <header class="section-header text-center mb-5">
+          <p class="section-subtitle" data-json="about.certificates.section_subtitle"></p>
+          <h2 class="section-title" data-json="about.certificates.section_title"></h2>
+        </header>
+
+        <!-- Certificates Grid -->
+        <div class="row g-4 justify-content-center">
+          <!-- Populated from JSON -->
+        </div>
+
+      </div>
+    </section>
+
+    <!-- =====================================================
+         CONTACT SECTION
+         ===================================================== -->
+    <section id="contact" class="contact-section">
+      <div class="container">
+
+        <!-- Section Header -->
+        <header class="section-header text-center mb-5">
+          <p class="section-subtitle" data-json="about.contact.section_subtitle"></p>
+          <h2 class="section-title" data-json="about.contact.section_title"></h2>
+        </header>
+
+        <div class="row g-5">
+
+          <!-- Contact Info -->
+          <div class="col-lg-5">
+            <div class="contact-info">
+              <h3 class="contact-info-title" data-json="profile.branding.site_name"></h3>
+              <p class="contact-info-text" data-json="about.contact.section_subtitle"></p>
+
+              <div class="contact-info-list">
+                <div class="contact-info-item">
+                  <i class="bi bi-envelope"></i>
+                  <a href="mailto:"><span></span></a>
+                </div>
+                <div class="contact-info-item">
+                  <i class="bi bi-geo-alt"></i>
+                  <span></span>
+                </div>
+              </div>
+
+              <!-- Social links: renderer injects <img>/<i> icon into each slot -->
+              <div class="contact-social">
+                <a href="#" target="_blank" rel="noopener noreferrer"><span class="social-icon"></span></a>
+                <a href="#" target="_blank" rel="noopener noreferrer"><span class="social-icon"></span></a>
+                <a href="#"><span class="social-icon"></span></a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Contact Form -->
+          <div class="col-lg-7">
+            <div class="contact-form">
+              <form data-validate>
+                <div class="row g-3">
+                  <div class="col-md-6">
+                    <div class="form-group">
+                      <label for="name" class="form-label">Name</label>
+                      <input type="text" class="form-control" id="name" name="name" required />
+                      <div class="form-error"></div>
+                    </div>
+                  </div>
+                  <div class="col-md-6">
+                    <div class="form-group">
+                      <label for="email" class="form-label">Email</label>
+                      <input type="email" class="form-control" id="email" name="email" required />
+                      <div class="form-error"></div>
+                    </div>
+                  </div>
+                  <div class="col-12">
+                    <div class="form-group">
+                      <label for="subject" class="form-label">Subject</label>
+                      <input type="text" class="form-control" id="subject" name="subject" required />
+                      <div class="form-error"></div>
+                    </div>
+                  </div>
+                  <div class="col-12">
+                    <div class="form-group">
+                      <label for="message" class="form-label">Message</label>
+                      <textarea class="form-control" id="message" name="message" rows="5" required></textarea>
+                      <div class="form-error"></div>
+                    </div>
+                  </div>
+                  <div class="col-12">
+                    <button type="submit" class="btn btn-primary btn-submit">
+                      <span class="btn-text">Send Message</span>
+                      <span class="btn-loader">
+                        <i class="bi bi-arrow-repeat"></i>
+                      </span>
+                    </button>
+                  </div>
+                </div>
+              </form>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+
+  <!-- =========================================================
+       BACK TO TOP BUTTON
+       ========================================================= -->
+  <button
+    class="back-to-top"
+    id="back-to-top"
+    aria-label="Scroll back to top of page"
+    title="Back to top"
+  >
+    <span class="back-to-top-icon">
+      <i class="bi bi-arrow-up"></i>
+    </span>
+  </button>
+
+  <!-- =========================================================
+       FOOTER
+       ========================================================= -->
+  <footer id="site-footer" class="site-footer" role="contentinfo">
+    <div class="container">
+
+      <!-- Footer Main -->
+      <div class="footer-main">
+        <div class="row g-5">
+
+          <!-- Brand Column -->
+          <div class="col-lg-4 col-md-6 order-lg-1 order-1">
+            <div class="footer-brand">
+              <a href="#home" class="footer-logo">
+                <img class="brand-logo" src="assets/icons/logo.svg" alt="TA — Software Engineer Portfolio" width="48" height="48" />
+                <span class="brand-name"></span>
+              </a>
+            </div>
+            <p class="footer-description" data-json="profile.hero.headline"></p>
+            <div class="footer-social" role="list" aria-label="Social media links">
+              <!-- Renderer injects <img>/<i> into each slot -->
+              <a href="#" class="footer-social-link" target="_blank" rel="noopener noreferrer" role="listitem"><span class="social-icon"></span></a>
+              <a href="#" class="footer-social-link" target="_blank" rel="noopener noreferrer" role="listitem"><span class="social-icon"></span></a>
+              <a href="#" class="footer-social-link" role="listitem"><span class="social-icon"></span></a>
+            </div>
+          </div>
+
+          <!-- Navigation Column -->
+          <div class="col-lg-2 col-md-6 order-lg-2 order-3">
+            <nav aria-labelledby="footer-nav-heading">
+              <h3 class="footer-heading" id="footer-nav-heading">Navigation</h3>
+              <ul class="footer-links" role="list">
+                <li role="listitem"><a href="#home">Home</a></li>
+                <li role="listitem"><a href="#about">About</a></li>
+                <li role="listitem"><a href="#skills">Skills</a></li>
+                <li role="listitem"><a href="#projects">Projects</a></li>
+                <li role="listitem"><a href="#experience">Experience</a></li>
+                <li role="listitem"><a href="#certificates">Certifications</a></li>
+                <li role="listitem"><a href="#contact">Contact</a></li>
+              </ul>
+            </nav>
+          </div>
+
+          <!-- Contact Column -->
+          <div class="col-lg-3 col-md-6 order-lg-3 order-4">
+            <nav aria-labelledby="footer-contact-heading">
+              <h3 class="footer-heading" id="footer-contact-heading" data-json="about.contact.section_title"></h3>
+              <ul class="footer-contact-list" role="list">
+                <li role="listitem">
+                  <a href="#" class="footer-contact-link">
+                    <i class="bi bi-envelope" aria-hidden="true"></i>
+                    <span></span>
+                  </a>
+                </li>
+                <li role="listitem">
+                  <span class="footer-contact-item">
+                    <i class="bi bi-geo-alt" aria-hidden="true"></i>
+                    <span></span>
+                  </span>
+                </li>
+              </ul>
+            </nav>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- Footer Bottom -->
+      <div class="footer-bottom">
+        <div class="footer-bottom-content">
+          <p class="footer-copyright">
+            &copy; <span id="current-year"></span> <span class="footer-author"></span>. All rights reserved.
+          </p>
+        </div>
+      </div>
+
+    </div>
+  </footer>
+
+  <!-- =========================================================
+       SCRIPTS
+       ========================================================= -->
+  <!-- Bootstrap 5 JS Bundle -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+
+  <!-- Theme Toggle -->
+  <script src="assets/js/theme.js"></script>
+
+  <!-- Portfolio Renderer (Data-Driven Content) -->
+  <script src="assets/js/portfolio-renderer.js"></script>
+
+  <!-- Main Application -->
+  <script src="assets/js/main.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,565 @@
+/* =========================================================
+   LOW FIDELITY WIREFRAME — BASE STYLES
+   Grayscale only. Rectangles, borders, placeholders, lines.
+   No shadows, no gradients, no rounded fancy cards, no images.
+
+   Design tokens (uniform scale):
+     - Spacing:  4 / 8 / 12 / 16 / 24 / 32 / 48 / 64 / 96
+     - Type:     12 / 14 / 16 / 18 / 20 / 24 / 32 / 40 / 48
+     - Border:   #999 (default) / #767676 (strong) / #CCC (soft)
+     - Fill:     #DDD (primary placeholder) / #F2F2F2 (soft placeholder)
+     - Text:     #000 (primary) / #555 (muted)
+   ========================================================= */
+
+/* ---------- Skip link ---------- */
+.wf-skip {
+  position: absolute;
+  top: -100px;
+  left: 1rem;
+  background: #FFFFFF;
+  color: #000000;
+  border: 1px solid #767676;
+  padding: 0.5rem 0.75rem;
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  z-index: 100;
+}
+.wf-skip:focus {
+  top: 1rem;
+}
+
+/* ---------- Reduced motion ---------- */
+@media (prefers-reduced-motion: no-preference) {
+  html { scroll-behavior: smooth; }
+}
+
+/* ---------- Base ---------- */
+body {
+  line-height: 1.55;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+/* =========================================================
+   TYPOGRAPHY SCALE
+   Used to anchor real text in the final design and to size
+   placeholders consistently.
+   ========================================================= */
+.wf-type-xs   { font-size: 0.75rem; line-height: 1.4; }   /* 12 */
+.wf-type-sm   { font-size: 0.875rem; line-height: 1.45; } /* 14 */
+.wf-type-base { font-size: 1rem; line-height: 1.55; }     /* 16 */
+.wf-type-md   { font-size: 1.125rem; line-height: 1.5; }  /* 18 */
+.wf-type-lg   { font-size: 1.25rem; line-height: 1.45; }  /* 20 */
+.wf-type-xl   { font-size: 1.5rem; line-height: 1.35; }   /* 24 */
+.wf-type-2xl  { font-size: 2rem; line-height: 1.25; }     /* 32 */
+.wf-type-3xl  { font-size: 2.5rem; line-height: 1.2; }    /* 40 */
+.wf-type-4xl  { font-size: 3rem; line-height: 1.15; }     /* 48 */
+
+/* =========================================================
+   SECTION
+   Consistent vertical rhythm with optional border separator.
+   ========================================================= */
+.wf-section {
+  position: relative;
+}
+.wf-section--bordered {
+  border-bottom: 1px solid #CCCCCC;
+}
+
+.wf-section-head {
+  margin-bottom: 0;
+}
+.wf-section-head--row {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.wf-section-title {
+  font-size: 1.5rem;       /* 24 */
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  border-bottom: 2px solid #767676;
+  padding-bottom: 0.5rem;
+  display: inline-block;
+  color: #000000;
+}
+
+/* =========================================================
+   NAVIGATION
+   ========================================================= */
+.wf-logo {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 48px;
+  height: 32px;
+  flex-shrink: 0;
+}
+.wf-logo-mark {
+  display: block;
+  width: 40px;
+  height: 24px;
+  border: 1px solid #999999;
+  position: relative;
+}
+.wf-logo-mark::before,
+.wf-logo-mark::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border: 1px solid transparent;
+}
+.wf-logo-mark::before {
+  border-top-color: #999999;
+  border-left-color: #999999;
+  transform: scale(0.5);
+  transform-origin: top left;
+}
+
+.wf-menu {
+  display: none;
+  align-items: center;
+  gap: 1.75rem;
+  font-size: 0.8125rem; /* 13 */
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+}
+@media (min-width: 768px) {
+  .wf-menu { display: flex; }
+}
+
+.wf-nav-link {
+  color: #000000;
+  text-decoration: none;
+  padding: 0.5rem 0;
+  border-bottom: 1px solid transparent;
+  display: inline-block;
+  min-height: 44px;
+  line-height: 1.9;
+}
+.wf-nav-link:hover,
+.wf-nav-link:focus-visible {
+  border-bottom-color: #767676;
+}
+.wf-nav-link[aria-current="page"] {
+  border-bottom-color: #000000;
+  font-weight: 700;
+}
+
+.wf-btn-toggle {
+  display: inline-flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 5px;
+  width: 44px;
+  height: 44px;
+  border: 1px solid #999999;
+  background: #FFFFFF;
+  cursor: pointer;
+  padding: 10px;
+}
+.wf-toggle-bar {
+  display: block;
+  width: 100%;
+  height: 2px;
+  background: #000000;
+}
+@media (min-width: 768px) {
+  .wf-btn-toggle { display: none; }
+}
+
+/* =========================================================
+   PLACEHOLDER PRIMITIVES
+   Two fill levels:
+     - primary (#DDD, border #999) for important placeholders
+     - soft   (#F2F2F2, border #CCC) for secondary / supporting
+   ========================================================= */
+.wf-placeholder {
+  background-color: #DDDDDD;
+  border: 1px solid #999999;
+  display: block;
+  border-radius: 0;
+}
+.wf-placeholder--soft {
+  background-color: #F2F2F2;
+  border-color: #CCCCCC;
+}
+
+/* Generic line */
+.wf-line { height: 12px; width: 100%; }
+.wf-line-short { width: 60%; }
+
+/* Heading-sized placeholders */
+.wf-h1 { height: 40px;  width: 75%; }
+.wf-h2 { height: 24px;  width: 55%; }
+.wf-h3 { height: 22px;  width: 45%; }
+.wf-h4 { height: 18px;  width: 70%; }
+.wf-h5 { height: 14px;  width: 55%; }
+.wf-h6 { height: 12px;  width: 40%; }
+.wf-meta { height: 12px; width: 35%; }
+
+/* Hero eyebrow (small label above name) */
+.wf-eyebrow {
+  width: 80px;
+  height: 10px;
+  background-color: #F2F2F2;
+  border: 1px solid #CCCCCC;
+}
+
+/* Hero specialty line (slightly heavier than a body line) */
+.wf-specialty {
+  height: 18px;
+  width: 90%;
+  background-color: #F2F2F2;
+  border: 1px solid #CCCCCC;
+}
+
+/* Tag / chip line (for category tags) */
+.wf-tag {
+  width: 70px;
+  height: 18px;
+  background-color: #F2F2F2;
+  border: 1px solid #CCCCCC;
+  display: inline-block;
+}
+
+/* Photo caption (under About photo) */
+.wf-photo-caption {
+  width: 50%;
+  height: 12px;
+  background-color: #F2F2F2;
+  border: 1px solid #CCCCCC;
+}
+
+/* Section sub (short intro line under section title) */
+.wf-section-sub {
+  width: min(420px, 100%);
+  height: 12px;
+  margin-top: 0.75rem;
+  background-color: #F2F2F2;
+  border: 1px solid #CCCCCC;
+}
+
+/* Avatar placeholder (hero) */
+.wf-avatar {
+  width: 280px;
+  height: 320px;
+  max-width: 100%;
+}
+
+/* Photo placeholder (about) */
+.wf-photo {
+  width: 100%;
+  aspect-ratio: 4 / 5;
+  min-height: 320px;
+}
+
+/* =========================================================
+   BLOCK GROUPING (About sub-sections)
+   Adds a subtle left rule to differentiate text blocks.
+   ========================================================= */
+.wf-block {
+  padding-left: 1rem;
+  border-left: 1px solid #CCCCCC;
+}
+
+/* =========================================================
+   BUTTONS
+   Two visual weights — primary (filled) + secondary (outline).
+   Min height 44px ensures touch-target compliance.
+   ========================================================= */
+.wf-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.65rem 1.5rem;
+  min-height: 44px;
+  border: 1px solid #767676;
+  background-color: #DDDDDD;
+  color: #000000;
+  font-size: 0.8125rem; /* 13 */
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  text-decoration: none;
+  cursor: pointer;
+  user-select: none;
+  white-space: nowrap;
+}
+.wf-btn--primary {
+  background-color: #000000;
+  color: #FFFFFF;
+  border-color: #000000;
+}
+.wf-btn--secondary {
+  background-color: #FFFFFF;
+  color: #000000;
+  border-color: #999999;
+}
+.wf-btn--small {
+  padding: 0.45rem 1rem;
+  font-size: 0.75rem;
+  min-height: 36px;
+}
+
+/* Inline arrow link used inside certificate cards */
+.wf-link-arrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: #000000;
+  text-decoration: none;
+  border-bottom: 1px solid transparent;
+  padding: 0.25rem 0;
+  min-height: 32px;
+}
+.wf-link-arrow::after {
+  content: "→";
+  font-size: 0.85rem;
+}
+.wf-link-arrow:hover,
+.wf-link-arrow:focus-visible {
+  border-bottom-color: #767676;
+}
+
+/* =========================================================
+   HERO — QUICK PROOF STRIP
+   Three stat placeholders under the CTAs to add density and
+   communicate "proof of work" without visuals.
+   ========================================================= */
+.wf-proof {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1.5rem;
+  border-top: 1px solid #CCCCCC;
+  border-bottom: 1px solid #CCCCCC;
+  padding: 1.25rem 0;
+}
+.wf-proof-item {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+.wf-proof-num {
+  width: 60%;
+  height: 22px;
+}
+.wf-proof-lbl {
+  width: 80%;
+  height: 10px;
+  background-color: #F2F2F2;
+  border-color: #CCCCCC;
+}
+
+/* =========================================================
+   SKILLS GRID
+   Each box now hosts a category label + 4 chip placeholders.
+   ========================================================= */
+.wf-skill-box {
+  border: 1px solid #999999;
+  background-color: #FFFFFF;
+  padding: 1.25rem;
+  height: 140px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.wf-box-label {
+  font-size: 0.875rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: #000000;
+}
+.wf-skill-chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+}
+.wf-chip {
+  display: inline-block;
+  width: 48px;
+  height: 18px;
+  background-color: #F2F2F2;
+  border: 1px solid #CCCCCC;
+}
+
+/* =========================================================
+   PROJECT + CERTIFICATE CARDS
+   ========================================================= */
+.wf-card {
+  border: 1px solid #999999;
+  background-color: #FFFFFF;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+.wf-card--featured {
+  border-color: #000000;
+  border-width: 2px;
+}
+.wf-card-image {
+  background-color: #DDDDDD;
+  border-bottom: 1px solid #999999;
+  height: 160px;
+  width: 100%;
+}
+.wf-card-image--featured {
+  height: 240px;
+}
+.wf-card-body {
+  padding: 1.25rem;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+.wf-stack {
+  height: 14px;
+  width: 80%;
+}
+.wf-card-footer {
+  margin-top: auto;
+  padding-top: 1rem;
+  border-top: 1px solid #CCCCCC;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+/* =========================================================
+   EXPERIENCE TIMELINE
+   Card-in-rail replaced with a borderless timeline card to
+   avoid double-border artifact.
+   ========================================================= */
+.wf-timeline {
+  position: relative;
+  border-left: 2px solid #767676;
+  padding-left: 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 2.5rem;
+}
+.wf-timeline-item {
+  position: relative;
+}
+.wf-timeline-dot {
+  position: absolute;
+  left: -2.4rem;
+  top: 0.75rem;
+  width: 16px;
+  height: 16px;
+  border: 2px solid #000000;
+  background-color: #FFFFFF;
+  border-radius: 50%;
+}
+.wf-timeline-item:first-child .wf-timeline-dot {
+  background-color: #000000;
+}
+.wf-timeline-card {
+  border: 1px solid #999999;
+  background-color: #FFFFFF;
+  padding: 1.25rem 1.5rem;
+  display: flex;
+  flex-direction: column;
+}
+.wf-timeline-meta {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+}
+.wf-timeline-sub {
+  border-top: 1px solid #CCCCCC;
+  padding-top: 0.75rem;
+}
+
+/* =========================================================
+   CONTACT
+   ========================================================= */
+.wf-info-row {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+.wf-info-label {
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: #555555;
+}
+.wf-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+.wf-form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+.wf-form-input {
+  height: 48px;
+  border: 1px solid #767676;
+  background-color: #DDDDDD;
+  padding: 0 0.75rem;
+  font-size: 0.875rem;
+  color: #000000;
+  font-family: inherit;
+}
+.wf-form-input:focus,
+.wf-form-textarea:focus {
+  outline: 2px dashed #767676;
+  outline-offset: 2px;
+}
+.wf-form-textarea {
+  height: 160px;
+  border: 1px solid #767676;
+  background-color: #DDDDDD;
+  padding: 0.75rem;
+  font-size: 0.875rem;
+  color: #000000;
+  font-family: inherit;
+  resize: vertical;
+}
+
+/* =========================================================
+   FOOTER
+   ========================================================= */
+.wf-footer {
+  border-top: 1px solid #CCCCCC;
+  background-color: #FFFFFF;
+}
+.wf-footer-title {
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: #000000;
+  font-weight: 700;
+}
+.wf-footer-mark {
+  width: 96px;
+  height: 32px;
+}
+.wf-social-box {
+  width: 44px;
+  height: 44px;
+  border: 1px solid #999999;
+  background-color: #DDDDDD;
+  display: inline-block;
+}
+
+/* =========================================================
+   FOCUS VISIBLE (accessibility)
+   ========================================================= */
+a:focus-visible,
+button:focus-visible {
+  outline: 2px dashed #767676;
+  outline-offset: 3px;
+}

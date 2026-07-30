@@ -1,0 +1,223 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "skill_categories": [
+    {
+      "id": "programming-languages",
+      "name": "Programming Languages",
+      "icon": "bi-code-slash",
+      "description": "Programming languages used for software development.",
+      "order": 1,
+      "skills": [
+        {
+          "name": "C#",
+          "level": 85,
+          "icon": "logos/csharp.svg",
+          "years": 2
+        },
+        {
+          "name": "Dart",
+          "level": 80,
+          "icon": "logos/dart.svg",
+          "years": 1
+        },
+        {
+          "name": "Java",
+          "level": 70,
+          "icon": "logos/java.svg",
+          "years": 2
+        },
+        {
+          "name": "JavaScript",
+          "level": 70,
+          "icon": "logos/javascript.svg",
+          "years": 2
+        },
+        {
+          "name": "SQL",
+          "level": 85,
+          "icon": "logos/sqlserver.svg",
+          "years": 2
+        }
+      ]
+    },
+    {
+      "id": "backend",
+      "name": "Backend Development",
+      "icon": "bi-server",
+      "description": "Building RESTful APIs and enterprise applications.",
+      "order": 2,
+      "skills": [
+        {
+          "name": "ASP.NET Core",
+          "level": 85,
+          "icon": "logos/dotnet.svg"
+        },
+        {
+          "name": "REST API",
+          "level": 85,
+          "icon": "icons/custom/api.svg"
+        },
+        {
+          "name": "Entity Framework Core",
+          "level": 80,
+          "icon": "icons/custom/database.svg"
+        },
+        {
+          "name": "JWT Authentication",
+          "level": 80,
+          "icon": "icons/custom/jwt.svg"
+        },
+        {
+          "name": "AJAX",
+          "level": 75,
+          "icon": "icons/custom/web.svg"
+        }
+      ]
+    },
+    {
+      "id": "mobile",
+      "name": "Mobile Development",
+      "icon": "bi-phone",
+      "description": "Cross-platform mobile application development.",
+      "order": 3,
+      "skills": [
+        {
+          "name": "Flutter",
+          "level": 80,
+          "icon": "logos/flutter.svg"
+        },
+        {
+          "name": "Firebase",
+          "level": 80,
+          "icon": "logos/firebase.svg"
+        }
+      ]
+    },
+    {
+      "id": "artificial-intelligence",
+      "name": "Artificial Intelligence",
+      "icon": "bi-cpu",
+      "description": "Developing AI-powered software solutions.",
+      "order": 4,
+      "skills": [
+        {
+          "name": "Gemini API",
+          "level": 80,
+          "icon": "icons/custom/ai.svg"
+        },
+        {
+          "name": "Prompt Engineering",
+          "level": 85,
+          "icon": "icons/custom/prompt.svg"
+        },
+        {
+          "name": "LLM Integration",
+          "level": 75,
+          "icon": "icons/custom/llm.svg"
+        },
+        {
+          "name": "AI Workflow Design",
+          "level": 75,
+          "icon": "icons/custom/workflow.svg"
+        }
+      ]
+    },
+    {
+      "id": "database",
+      "name": "Database",
+      "icon": "bi-database",
+      "description": "Database design and management.",
+      "order": 5,
+      "skills": [
+        {
+          "name": "SQL Server",
+          "level": 85,
+          "icon": "logos/sqlserver.svg"
+        },
+        {
+          "name": "Firestore",
+          "level": 75,
+          "icon": "logos/firebase.svg"
+        }
+      ]
+    },
+    {
+      "id": "architecture",
+      "name": "Software Architecture",
+      "icon": "bi-diagram-3",
+      "description": "Enterprise software architecture and design patterns.",
+      "order": 6,
+      "skills": [
+        {
+          "name": "Clean Architecture",
+          "level": 80,
+          "icon": "icons/custom/clean-architecture.svg"
+        },
+        {
+          "name": "Domain-Driven Design",
+          "level": 75,
+          "icon": "icons/custom/ddd.svg"
+        },
+        {
+          "name": "CQRS",
+          "level": 75,
+          "icon": "icons/custom/cqrs.svg"
+        },
+        {
+          "name": "Repository Pattern",
+          "level": 85,
+          "icon": "icons/custom/repository.svg"
+        }
+      ]
+    },
+    {
+      "id": "tools",
+      "name": "Development Tools",
+      "icon": "bi-tools",
+      "description": "Daily development and collaboration tools.",
+      "order": 7,
+      "skills": [
+        {
+          "name": "Git",
+          "level": 85,
+          "icon": "logos/git.svg"
+        },
+        {
+          "name": "GitHub",
+          "level": 85,
+          "icon": "logos/github.svg"
+        },
+        {
+          "name": "Docker",
+          "level": 70,
+          "icon": "logos/docker.svg"
+        },
+        {
+          "name": "Swagger",
+          "level": 85,
+          "icon": "icons/custom/swagger.svg"
+        },
+        {
+          "name": "Visual Studio",
+          "level": 90,
+          "icon": "logos/visualstudio.svg"
+        },
+        {
+          "name": "VS Code",
+          "level": 90,
+          "icon": "logos/vscode.svg"
+        }
+      ]
+    }
+  ],
+  "languages": [
+    {
+      "name": "Vietnamese",
+      "level": "Native"
+    },
+    {
+      "name": "English",
+      "level": "Intermediate (TOEIC Target 700+)"
+    }
+  ]
+}

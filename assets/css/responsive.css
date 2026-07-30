@@ -1,0 +1,401 @@
+/* =========================================================
+   RESPONSIVE STYLES
+   Software Engineer Portfolio
+
+   Breakpoints:
+   - Extra Small:  < 576px   (default/mobile-first)
+   - Small:        >= 576px  (sm)
+   - Medium:       >= 768px  (md)
+   - Large:        >= 992px  (lg)
+   - Extra Large:  >= 1200px (xl)
+   - XXL:          >= 1400px (xxl)
+
+   ========================================================= */
+
+/* =========================================================
+   EXTRA SMALL (Mobile) — Default
+   ========================================================= */
+@media (max-width: 575.98px) {
+  /* Typography */
+  h1, .h1 { font-size: 2rem; }
+  h2, .h2 { font-size: 1.75rem; }
+  h3, .h3 { size: 1.5rem; }
+
+  /* Spacing */
+  section {
+    padding: var(--space-8) 0;
+  }
+
+  /* Navigation */
+  .site-header .navbar {
+    padding: var(--space-3) 0;
+  }
+
+  .navbar-collapse {
+    background-color: var(--color-surface);
+    padding: var(--space-4);
+    border-radius: var(--radius-lg);
+    margin-top: var(--space-3);
+    box-shadow: var(--shadow-lg);
+  }
+
+  .navbar-nav {
+    gap: var(--space-2);
+  }
+
+  .site-header .nav-link {
+    padding: var(--space-3) var(--space-4);
+    border-radius: var(--radius-md);
+  }
+
+  .site-header .nav-link::after {
+    display: none;
+  }
+
+  .site-header .nav-link:hover,
+  .site-header .nav-link.active {
+    background-color: var(--color-bg-soft);
+  }
+
+  .theme-toggle-wrapper {
+    padding: var(--space-3) var(--space-4);
+    border-top: 1px solid var(--color-border-light);
+    margin-top: var(--space-3);
+  }
+
+  /* Footer */
+  .footer-bottom {
+    text-align: center;
+  }
+
+  .footer-bottom .col-md-6 {
+    text-align: center !important;
+    margin-bottom: var(--space-3);
+  }
+
+  /* Buttons */
+  .btn {
+    width: 100%;
+    margin-bottom: var(--space-2);
+  }
+
+  .btn:last-child {
+    margin-bottom: 0;
+  }
+
+  /* Cards */
+  .card {
+    margin-bottom: var(--space-4);
+  }
+}
+
+/* =========================================================
+   SMALL — Mobile Landscape / Large Phone (576px+)
+   ========================================================= */
+@media (min-width: 576px) and (max-width: 767.98px) {
+  /* Typography */
+  h1, .h1 { font-size: 2.5rem; }
+  h2, .h2 { size: 2rem; }
+
+  /* Spacing */
+  section {
+    padding: var(--space-10) 0;
+  }
+
+  /* Cards Grid */
+  .card-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  /* Buttons */
+  .btn {
+    width: auto;
+  }
+}
+
+/* =========================================================
+   MEDIUM — Tablet (768px+)
+   ========================================================= */
+@media (min-width: 768px) and (max-width: 991.98px) {
+  /* Typography */
+  h1, .h1 { font-size: 2.75rem; }
+  h2, .h2 { font-size: 2.25rem; }
+  h3, .h3 { font-size: 1.75rem; }
+
+  /* Spacing */
+  section {
+    padding: var(--space-12) 0;
+  }
+
+  /* Layout */
+  .container {
+    max-width: 720px;
+  }
+
+  /* Cards Grid */
+  .card-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--space-5);
+  }
+
+  /* Footer */
+  .footer-heading {
+    margin-bottom: var(--space-3);
+  }
+
+  .footer-links li {
+    margin-bottom: var(--space-1);
+  }
+}
+
+/* =========================================================
+   LARGE — Desktop (992px+)
+   ========================================================= */
+@media (min-width: 992px) and (max-width: 1199.98px) {
+  /* Typography */
+  h1, .h1 { font-size: 3rem; }
+  h2, .h2 { font-size: 2.5rem; }
+  h3, .h3 { font-size: 2rem; }
+  h4, .h4 { font-size: 1.5rem; }
+
+  /* Layout */
+  .container {
+    max-width: 960px;
+  }
+
+  /* Cards Grid */
+  .card-grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: var(--space-6);
+  }
+
+  /* Hero */
+  .hero-content {
+    padding-left: var(--space-8);
+  }
+
+  /* Timeline */
+  .timeline {
+    padding-left: var(--space-10);
+  }
+
+  /* Navigation */
+  .site-header .nav-link {
+    padding: var(--space-2) var(--space-4);
+  }
+}
+
+/* =========================================================
+   EXTRA LARGE — Large Desktop (1200px+)
+   ========================================================= */
+@media (min-width: 1200px) and (max-width: 1399.98px) {
+  /* Typography */
+  h1, .h1 { font-size: 3.5rem; }
+  h2, .h2 { font-size: 2.75rem; }
+  h3, .h3 { font-size: 2.25rem; }
+  h4, .h4 { font-size: 1.75rem; }
+
+  /* Layout */
+  .container {
+    max-width: 1140px;
+  }
+
+  /* Cards Grid */
+  .card-grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: var(--space-6);
+  }
+
+  /* Hero */
+  .hero-content {
+    padding-left: var(--space-12);
+  }
+
+  /* Section Titles */
+  .section-title {
+    font-size: var(--font-size-3xl);
+  }
+}
+
+/* =========================================================
+   XXL — Extra Large Desktop (1400px+)
+   ========================================================= */
+@media (min-width: 1400px) {
+  /* Typography */
+  h1, .h1 { font-size: 4rem; }
+  h2, .h2 { font-size: 3rem; }
+  h3, .h3 { font-size: 2.5rem; }
+  h4, .h4 { font-size: 1.875rem; }
+
+  /* Layout */
+  .container {
+    max-width: 1320px;
+  }
+
+  /* Cards Grid */
+  .card-grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: var(--space-8);
+  }
+
+  /* Hero */
+  .hero-content {
+    padding-left: var(--space-12);
+  }
+
+  /* Spacing */
+  section {
+    padding: var(--space-12) 0;
+  }
+}
+
+/* =========================================================
+   RESPONSIVE UTILITIES
+   ========================================================= */
+
+/* Display Utilities */
+@media (max-width: 575.98px) {
+  .d-none-xs { display: none !important; }
+  .d-block-xs { display: block !important; }
+  .d-flex-xs { display: flex !important; }
+}
+
+@media (min-width: 576px) and (max-width: 767.98px) {
+  .d-none-sm { display: none !important; }
+  .d-block-sm { display: block !important; }
+  .d-flex-sm { display: flex !important; }
+}
+
+@media (min-width: 768px) and (max-width: 991.98px) {
+  .d-none-md { display: none !important; }
+  .d-block-md { display: block !important; }
+  .d-flex-md { display: flex !important; }
+}
+
+@media (min-width: 992px) and (max-width: 1199.98px) {
+  .d-none-lg { display: none !important; }
+  .d-block-lg { display: block !important; }
+  .d-flex-lg { display: flex !important; }
+}
+
+@media (min-width: 1200px) and (max-width: 1399.98px) {
+  .d-none-xl { display: none !important; }
+  .d-block-xl { display: block !important; }
+  .d-flex-xl { display: flex !important; }
+}
+
+@media (min-width: 1400px) {
+  .d-none-xxl { display: none !important; }
+  .d-block-xxl { display: block !important; }
+  .d-flex-xxl { display: flex !important; }
+}
+
+/* Text Alignment */
+@media (max-width: 575.98px) {
+  .text-xs-start { text-align: left !important; }
+  .text-xs-center { text-align: center !important; }
+  .text-xs-end { text-align: right !important; }
+}
+
+@media (min-width: 576px) and (max-width: 767.98px) {
+  .text-sm-start { text-align: left !important; }
+  .text-sm-center { text-align: center !important; }
+  .text-sm-end { text-align: right !important; }
+}
+
+/* Spacing Utilities */
+@media (max-width: 575.98px) {
+  .py-xs-0 { padding-top: 0 !important; padding-bottom: 0 !important; }
+  .py-xs-4 { padding-top: var(--space-4) !important; padding-bottom: var(--space-4) !important; }
+  .py-xs-6 { padding-top: var(--space-6) !important; padding-bottom: var(--space-6) !important; }
+}
+
+/* =========================================================
+   PRINT STYLES
+   ========================================================= */
+@media print {
+  /* Hide elements not needed for print */
+  .site-header,
+  .site-footer,
+  .theme-toggle-wrapper,
+  .btn,
+  .social-links {
+    display: none !important;
+  }
+
+  /* Typography */
+  body {
+    font-size: 12pt;
+    color: #000;
+    background: #fff;
+  }
+
+  h1, .h1 { font-size: 24pt; }
+  h2, .h2 { font-size: 20pt; }
+  h3, .h3 { font-size: 16pt; }
+  h4, .h4 { font-size: 14pt; }
+
+  /* Links */
+  a {
+    color: #000;
+    text-decoration: underline;
+  }
+
+  /* Cards */
+  .card {
+    break-inside: avoid;
+    border: 1px solid #ddd;
+  }
+
+  /* Sections */
+  section {
+    padding: 20pt 0;
+    page-break-inside: avoid;
+  }
+}
+
+/* =========================================================
+   REDUCED MOTION
+   ========================================================= */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* =========================================================
+   HIGH CONTRAST MODE (Accessibility)
+   ========================================================= */
+@media (prefers-contrast: high) {
+  :root {
+    --color-border: #000;
+    --color-text: #000;
+    --color-text-secondary: #333;
+    --shadow-sm: 0 0 0 1px #000;
+    --shadow-md: 0 0 0 2px #000;
+    --shadow-lg: 0 0 0 3px #000;
+  }
+
+  [data-bs-theme="dark"] {
+    --color-border: #fff;
+    --color-text: #fff;
+    --color-text-secondary: #ccc;
+  }
+
+  a {
+    text-decoration: underline;
+  }
+
+  .btn {
+    border-width: 2px;
+  }
+
+  .card {
+    border-width: 2px;
+  }
+}

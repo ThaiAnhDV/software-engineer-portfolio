@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" role="img" aria-label="TA">
+  <title>TA</title>
+  <defs>
+    <linearGradient id="grad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0d6efd"/>
+      <stop offset="100%" stop-color="#6366f1"/>
+    </linearGradient>
+  </defs>
+  <rect x="0" y="0" width="32" height="32" rx="7" ry="7" fill="url(#grad)"/>
+  <rect x="0" y="0" width="32" height="32" rx="7" ry="7"
+        fill="none" stroke="rgba(255,255,255,0.18)" stroke-width="0.6"/>
+  <g fill="none" stroke="#ffffff" stroke-width="2.4"
+     stroke-linecap="round" stroke-linejoin="round">
+    <path d="M9 11 H23"/>
+    <path d="M16 11 V22"/>
+    <path d="M11 22 L15 14"/>
+    <path d="M15 14 L19 22"/>
+    <path d="M12.5 18 H17.5"/>
+  </g>
+</svg>

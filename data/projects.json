@@ -1,0 +1,149 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "projects": [
+    {
+      "id": "ai-interview-platform",
+      "title": "AI Interview Platform",
+      "category": "AI Software",
+      "featured": true,
+      "short_description": "An AI-powered interview preparation platform that analyzes resumes, identifies skill gaps, generates personalized learning roadmaps, and conducts mock technical interviews.",
+      "description": "A comprehensive AI-driven career development platform that helps students prepare for technical interviews through resume analysis, job description matching, skill gap analysis, roadmap generation, and AI-powered interview evaluation.",
+      "thumbnail": "assets/images/mockups/aiinterview.png",
+      "thumbnail_alt": "AI Interview Platform Dashboard",
+      "technologies": [
+        "ASP.NET Core",
+        "Razor Pages",
+        "SQL Server",
+        "Entity Framework Core",
+        "Gemini API",
+        "JWT",
+        "Bootstrap"
+      ],
+      "links": {
+        "github": "",
+        "demo": ""
+      },
+      "details": {
+        "problem": "Students often struggle to understand their readiness for target jobs and lack personalized guidance for interview preparation.",
+        "solution": "Developed an AI-powered platform that analyzes resumes and job descriptions, calculates readiness scores, identifies missing skills, generates learning roadmaps, and conducts mock interviews with AI evaluation.",
+        "features": [
+          "Resume Management",
+          "Target Job Management",
+          "Skill Gap Analysis",
+          "AI Resume Analysis",
+          "Readiness Score",
+          "Learning Roadmap Generation",
+          "AI Mock Interview",
+          "Interview Evaluation Dashboard"
+        ],
+        "architecture": [
+          "Clean Architecture",
+          "Repository Pattern",
+          "REST API",
+          "JWT Authentication"
+        ],
+        "responsibilities": [
+          "Backend Development",
+          "Database Design",
+          "AI Integration",
+          "Business Analysis",
+          "System Architecture"
+        ],
+        "challenges": "Designing reliable AI workflows and integrating Large Language Models into software engineering processes."
+      },
+      "order": 1
+    },
+    {
+      "id": "hotel-management-system",
+      "title": "Hotel Management System",
+      "category": "Mobile Application",
+      "featured": true,
+      "short_description": "A cross-platform hotel management application supporting room booking, customer management, payments, and administrative operations.",
+      "description": "A mobile hotel management system developed with Flutter and Firebase, supporting booking management, room management, customer management, payment tracking, and administrative dashboards.",
+      "thumbnail": "assets/projects/hotel-booking/thumbnail.webp",
+      "thumbnail_alt": "Hotel Management System",
+      "technologies": [
+        "Flutter",
+        "Firebase",
+        "Firestore",
+        "FCM",
+        "Provider"
+      ],
+      "links": {
+        "github": "",
+        "demo": ""
+      },
+      "details": {
+        "problem": "Small and medium-sized hotels require an affordable digital solution for booking and operational management.",
+        "solution": "Developed a mobile-first hotel management application with Firebase backend and real-time synchronization.",
+        "features": [
+          "Room Management",
+          "Booking Management",
+          "Customer Management",
+          "Payment Tracking",
+          "Revenue Dashboard",
+          "Staff Management",
+          "Notifications"
+        ],
+        "architecture": [
+          "Flutter Architecture",
+          "Firebase",
+          "MVVM"
+        ],
+        "responsibilities": [
+          "Team Lead",
+          "Project Architecture",
+          "Backend Integration",
+          "Shared Data Models"
+        ],
+        "challenges": "Coordinating a multi-member development team while maintaining a consistent architecture and data contracts."
+      },
+      "order": 2
+    },
+    {
+      "id": "salesphere-management-system",
+      "title": "SaleSphere Management System",
+      "category": "Enterprise Software",
+      "featured": true,
+      "short_description": "An enterprise sales management system supporting product management, inventory, customer management, and sales reporting.",
+      "description": "A web-based enterprise management system designed to streamline business operations, inventory management, customer management, and reporting.",
+      "thumbnail": "assets/projects/salesphere/thumbnail.webp",
+      "thumbnail_alt": "SaleSphere Management System",
+      "technologies": [
+        "ASP.NET Core",
+        "SQL Server",
+        "Entity Framework Core",
+        "Bootstrap",
+        "JavaScript"
+      ],
+      "links": {
+        "github": "",
+        "demo": ""
+      },
+      "details": {
+        "problem": "Businesses need a centralized platform to manage products, customers, inventory, and sales activities.",
+        "solution": "Designed and implemented an enterprise management system following modern software engineering practices.",
+        "features": [
+          "Product Management",
+          "Inventory Management",
+          "Customer Management",
+          "Sales Management",
+          "Revenue Reports",
+          "Role-based Authentication"
+        ],
+        "architecture": [
+          "Layered Architecture",
+          "Repository Pattern",
+          "REST API"
+        ],
+        "responsibilities": [
+          "System Design",
+          "Backend Development",
+          "Database Design"
+        ],
+        "challenges": "Designing scalable business workflows while maintaining clean and maintainable code."
+      },
+      "order": 3
+    }
+  ]
+}

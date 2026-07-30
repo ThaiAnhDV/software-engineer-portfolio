@@ -1,0 +1,52 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "experience": [
+    {
+      "id": "ocean-tech",
+      "job_title": "Business Analyst Intern & Software Tester Intern",
+      "company": "Ocean Tech",
+      "location": "Ho Chi Minh City, Vietnam",
+      "type": "internship",
+      "start_date": "2025-06",
+      "end_date": "2025-12",
+      "current": false,
+      "duration_text": "Jun 2025 – Dec 2025",
+      "highlights": [
+        "Participated in requirement gathering and business analysis activities.",
+        "Prepared software requirement documents and functional specifications.",
+        "Created test cases, executed manual testing, and reported software defects.",
+        "Collaborated with developers and project stakeholders throughout the software development lifecycle.",
+        "Supported project documentation and quality assurance processes."
+      ],
+      "technologies": [
+        "Business Analysis",
+        "Software Testing",
+        "Requirement Analysis",
+        "Documentation",
+        "Test Case",
+        "Bug Reporting",
+        "SQL",
+        "Agile"
+      ],
+      "order": 1
+    }
+  ],
+  "education": {
+    "id": "fpt-university",
+    "degree": "Bachelor of Information Technology",
+    "field": "Software Engineering",
+    "institution": "FPT University",
+    "start_date": "2022",
+    "end_date": "Present",
+    "status": "Final-year Student",
+    "description": "Studying Software Engineering with a focus on backend development, mobile application development, software architecture, databases, and artificial intelligence. Participated in multiple academic and enterprise-style software projects.",
+    "tags": [
+      "Software Engineering",
+      "ASP.NET Core",
+      "Flutter",
+      "Artificial Intelligence",
+      "Database Systems",
+      "Software Architecture"
+    ]
+  }
+}
