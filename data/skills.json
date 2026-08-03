@@ -101,7 +101,7 @@
       "order": 4,
       "skills": [
         {
-          "name": "Gemini API",
+          "name": "Gemini,Claude API",
           "level": 80,
           "icon": "icons/custom/ai.svg"
         },
@@ -136,6 +136,11 @@
         },
         {
           "name": "Firestore",
+          "level": 75,
+          "icon": "logos/firebase.svg"
+        },
+        {
+          "name": "My SQL",
           "level": 75,
           "icon": "logos/firebase.svg"
         }
@@ -211,10 +216,7 @@
     }
   ],
   "languages": [
-    {
-      "name": "Vietnamese",
-      "level": "Native"
-    },
+    
     {
       "name": "English",
       "level": "Intermediate (TOEIC Target 700+)"

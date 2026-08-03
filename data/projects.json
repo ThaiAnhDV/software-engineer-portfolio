@@ -20,8 +20,8 @@
         "Bootstrap"
       ],
       "links": {
-        "github": "",
-        "demo": ""
+        "github": "https://github.com/ThaiAnhDV/AIInterview",
+        "demo": "http://aiinterview.io.vn/"
       },
       "details": {
         "problem": "Students often struggle to understand their readiness for target jobs and lack personalized guidance for interview preparation.",
