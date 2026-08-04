@@ -1,0 +1,72 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "section": {
+    "title": "Kinh nghiệm",
+    "subtitle": "Thực tập & Dự án học thuật",
+    "aria_label": "Mốc thời gian kinh nghiệm làm việc"
+  },
+  "ui": {
+    "labels": {
+      "current": "Hiện tại",
+      "past": "Trước đây",
+      "present": "Hiện tại"
+    },
+    "date_separator": "–",
+    "duration_separator": " – ",
+    "divider": "•"
+  },
+  "experience": [
+    {
+      "id": "ocean-tech",
+      "job_title": "Thực tập sinh Phân tích Nghiệp vụ & Kiểm thử Phần mềm",
+      "company": "Ocean Tech",
+      "location": "Hà Nội, Việt Nam",
+      "type": "internship",
+      "start_date": "2025-06",
+      "end_date": "2025-12",
+      "current": false,
+      "duration_text": "Th06 2025 – Th12 2025",
+      "highlights": [
+        "Tham gia các hoạt động thu thập yêu cầu và phân tích nghiệp vụ.",
+        "Chuẩn bị tài liệu yêu cầu phần mềm và đặc tả chức năng.",
+        "Tạo test case, thực hiện kiểm thử thủ công và báo cáo lỗi phần mềm.",
+        "Phối hợp với lập trình viên và các bên liên quan trong suốt vòng đời phát triển phần mềm.",
+        "Hỗ trợ tài liệu dự án và các quy trình đảm bảo chất lượng."
+      ],
+      "technologies": [
+        "Business Analysis",
+        "Software Testing",
+        "Requirement Analysis",
+        "Documentation",
+        "Test Case",
+        "Bug Reporting",
+        "SQL",
+        "Agile"
+      ],
+      "order": 1
+    }
+  ],
+  "education": {
+    "section": {
+      "title": "Học vấn",
+      "subtitle": "Hành trình học tập của tôi",
+      "aria_label": "Lịch sử học vấn"
+    },
+    "id": "fpt-university",
+    "degree": "Cử nhân Công nghệ Thông tin",
+    "field": "Kỹ thuật Phần mềm",
+    "institution": "Đại học FPT",
+    "start_date": "2022",
+    "end_date": "Hiện tại",
+    "status": "Sinh viên năm cuối",
+    "description": "Học chuyên ngành Kỹ thuật Phần mềm với trọng tâm là phát triển backend, phát triển ứng dụng di động, kiến trúc phần mềm, cơ sở dữ liệu và trí tuệ nhân tạo. Đã tham gia nhiều dự án học thuật và dự án theo phong cách doanh nghiệp.",
+    "tags": [
+      "Kỹ thuật Phần mềm",
+      "ASP.NET Core",
+      "Flutter",
+      "Trí tuệ nhân tạo",
+      "Hệ quản trị cơ sở dữ liệu",
+      "Kiến trúc phần mềm"
+    ]
+  }
+}

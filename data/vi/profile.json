@@ -1,0 +1,127 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "meta": {
+    "author": "Đặng Văn Thái Anh",
+    "author_title": "Kỹ sư Phần mềm",
+    "author_email": "email@example.com",
+    "author_location": "TP. Hồ Chí Minh, Việt Nam",
+    "author_website": "https://username.github.io/portfolio",
+    "github_url": "https://github.com/username",
+    "linkedin_url": "https://linkedin.com/in/username",
+    "twitter_url": "https://twitter.com/twitter",
+    "locale": "vi_VN",
+    "roles": ["Kỹ sư Phần mềm", "Lập trình viên Full Stack", "Người giải quyết vấn đề"]
+  },
+  "branding": {
+    "site_name": "Đặng Văn Thái Anh Portfolio",
+    "tagline": "Kỹ sư Phần mềm",
+    "description": "Portfolio Kỹ sư Phần mềm — Portfolio cá nhân của Kỹ sư Phần mềm AI.",
+    "keywords": ["Kỹ sư Phần mềm", "Lập trình viên Full Stack", "Lập trình viên Web", "Portfolio"],
+    "og_image": "assets/images/og-image.png",
+    "favicon": "assets/icons/favicon.svg"
+  },
+  "hero": {
+    "greeting": "Xin chào, tôi là",
+    "headline": "Một Kỹ sư Phần mềm đầy nhiệt huyết, chuyên xây dựng những trải nghiệm số xuất sắc. Tôi tạo ra các ứng dụng web có khả năng mở rộng và các giải pháp đám mây tạo ra sự khác biệt.",
+    "availability": "Sẵn sàng nhận việc",
+    "badge_icon": "bi-code-slash",
+    "avatar": "assets/images/avatar/avatar-large.webp",
+    "about_avatar": "assets/images/avatar/avatar.webp",
+    "cta_primary": {
+      "label": "Xem dự án",
+      "href": "#projects",
+      "icon": "bi-folder"
+    },
+    "cta_secondary": {
+      "label": "Liên hệ ngay",
+      "href": "#contact",
+      "icon": "bi-envelope"
+    },
+    "scroll": {
+      "text": "Cuộn xuống",
+      "aria_label": "Cuộn đến phần Giới thiệu"
+    }
+  },
+  "social": {
+    "github": {
+      "url": "https://github.com/ThaiAnhDV",
+      "icon": "bi-github",
+      "label": "Trang GitHub"
+    },
+    "linkedin": {
+      "url": "https://www.linkedin.com/in/th%C3%A1i-anh-%C4%91%E1%BA%B7ng-v%C4%83n-4b8a47372/",
+      "icon": "bi-linkedin",
+      "label": "Trang LinkedIn"
+    },
+    "email": {
+      "url": "thaianhdang032004@gmail.com",
+      "icon": "bi-envelope",
+      "label": "Gửi email"
+    },
+    "resume": {
+      "url": "assets/pdf/cv/resume.pdf",
+      "icon": "bi-file-earmark-text",
+      "label": "Tải CV"
+    }
+  },
+  "navigation": {
+    "primary": [
+      { "label": "Trang chủ", "href": "#home", "data-section": "home" },
+      { "label": "Giới thiệu", "href": "#about", "data-section": "about" },
+      { "label": "Kỹ năng", "href": "#skills", "data-section": "skills" },
+      { "label": "Dự án", "href": "#projects", "data-section": "projects" },
+      { "label": "Kinh nghiệm", "href": "#experience", "data-section": "experience" },
+      { "label": "Chứng chỉ", "href": "#certificates", "data-section": "certificates" },
+      { "label": "Liên hệ", "href": "#contact", "data-section": "contact" }
+    ],
+    "footer": {
+      "navigation": [
+        { "label": "Trang chủ", "href": "#home" },
+        { "label": "Giới thiệu", "href": "#about" },
+        { "label": "Kỹ năng", "href": "#skills" },
+        { "label": "Dự án", "href": "#projects" },
+        { "label": "Kinh nghiệm", "href": "#experience" },
+        { "label": "Chứng chỉ", "href": "#certificates" },
+        { "label": "Liên hệ", "href": "#contact" }
+      ]
+    },
+    "accessibility": {
+      "primary_nav": "Điều hướng chính",
+      "toggle_nav": "Bật/tắt menu điều hướng",
+      "skip_to_main": "Chuyển đến nội dung chính",
+      "toggle_theme": "Chuyển đổi giao diện",
+      "theme_light": "Chuyển sang giao diện sáng",
+      "theme_dark": "Chuyển sang giao diện tối",
+      "home_link": "Trang chủ",
+      "brand_logo_alt": "TA — Portfolio Kỹ sư Phần mềm"
+    }
+  },
+  "footer": {
+    "heading_navigation": "Điều hướng",
+    "heading_contact": "Liên hệ",
+    "copyright": "© {year} {author}. Bảo lưu mọi quyền.",
+    "all_rights_reserved": "Bảo lưu mọi quyền",
+    "last_updated": "Cập nhật lần cuối",
+    "email_link_label": "Email",
+    "location_link_label": "Địa điểm",
+    "social_aria": "Liên kết mạng xã hội"
+  },
+  "seo": {
+    "title": "Đặng Văn Thái Anh — Kỹ sư Phần mềm",
+    "description": "Portfolio Kỹ sư Phần mềm — Thể hiện chuyên môn về phát triển full-stack, kiến trúc đám mây và các giải pháp có khả năng mở rộng.",
+    "keywords": ["Kỹ sư Phần mềm", "Lập trình viên Backend", "Lập trình viên Web", "Portfolio"],
+    "og_image": "assets/images/og-image.png",
+    "favicon": "assets/icons/favicon.svg",
+    "canonical_url": "https://username.github.io/portfolio/",
+    "theme_color": "#0d6efd",
+    "locale": "vi_VN",
+    "og_type": "website",
+    "og_site_name": "Portfolio",
+    "twitter_card": "summary_large_image",
+    "robots": "index, follow"
+  },
+  "back_to_top": {
+    "aria_label": "Cuộn trở lại đầu trang",
+    "title": "Về đầu trang"
+  }
+}

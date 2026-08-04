@@ -1,0 +1,21 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "section": {
+    "title": "Thành tích & Chứng chỉ",
+    "subtitle": "Học tập không ngừng"
+  },
+  "ui": {
+    "buttons": {
+      "verify": "Xác minh",
+      "issuer": "Tổ chức cấp"
+    },
+    "labels": {
+      "verify": "Xác minh",
+      "issuer": "Tổ chức cấp",
+      "issued": "Ngày cấp",
+      "id": "Mã"
+    },
+    "alt_fallback": "Chứng chỉ"
+  },
+  "certificates": []
+}

@@ -1,0 +1,30 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "about": {
+    "section_title": "Giới thiệu về tôi",
+    "section_subtitle": "Hãy tìm hiểu về tôi",
+    "labels": {
+      "introduction": "Giới thiệu",
+      "career_objective": "Mục tiêu nghề nghiệp",
+      "quick_info": "Thông tin nhanh"
+    },
+    "introduction": [
+      "Tôi là sinh viên năm cuối ngành Công nghệ Thông tin với niềm đam mê mạnh mẽ dành cho Kỹ thuật Phần mềm, Trí tuệ Nhân tạo và phát triển ứng dụng hiện đại. Tôi thích thiết kế các giải pháp phần mềm có khả năng mở rộng, xây dựng kiến trúc sạch và biến ý tưởng thành những sản phẩm thực tế.",
+      "Trọng tâm chính của tôi là ASP.NET Core, Flutter, SQL Server, Firebase và tích hợp AI thông qua Large Language Models. Thông qua các dự án học tập, thực tập và kinh nghiệm dẫn dắt nhóm, tôi đã tích lũy được kỹ năng thực tế về kiến trúc phần mềm, phát triển backend, ứng dụng di động và các hệ thống tích hợp AI."
+    ],
+    "career_objective": "Mục tiêu của tôi là trở thành một Kỹ sư Phần mềm AI — người xây dựng các ứng dụng thông minh, có khả năng mở rộng và lấy người dùng làm trung tâm. Tôi mong muốn đóng góp vào những sản phẩm phần mềm sáng tạo, đồng thời không ngừng nâng cao chuyên môn về kiến trúc phần mềm, công nghệ đám mây và trí tuệ nhân tạo."
+  },
+  "quick_info": {
+    "location": "Việt Nam",
+    "education": "Sinh viên IT năm cuối",
+    "specialization": "Kỹ thuật Phần mềm & AI",
+    "career_goal": "Kỹ sư Phần mềm AI",
+    "labels": {
+      "location": "Địa điểm",
+      "education": "Học vấn",
+      "specialization": "Chuyên ngành",
+      "career_goal": "Mục tiêu nghề nghiệp"
+    }
+  },
+  "cv_url": "assets/cv/CV_AnhDang_VI.pdf"
+}

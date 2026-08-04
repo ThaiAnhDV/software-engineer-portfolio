@@ -1,0 +1,109 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "section": {
+    "title": "Liên hệ",
+    "subtitle": "Cùng xây dựng những điều tuyệt vời"
+  },
+  "ui": {
+    "form_labels": {
+      "name": "Họ tên",
+      "email": "Email",
+      "subject": "Tiêu đề",
+      "message": "Nội dung"
+    },
+    "button": {
+      "send": "Gửi tin nhắn"
+    },
+    "footer": {
+      "email_label": "Email",
+      "location_label": "Địa điểm"
+    },
+    "validation": {
+      "required": "Vui lòng điền vào trường này",
+      "email_invalid": "Vui lòng nhập địa chỉ email hợp lệ",
+      "email_domain_invalid": "Vui lòng nhập tên miền email hợp lệ",
+      "min_length": "Vui lòng nhập ít nhất {n} ký tự"
+    },
+    "alerts": {
+      "success": "Thành công! Tin nhắn của bạn đã được gửi. Tôi sẽ phản hồi sớm.",
+      "close": "Đóng"
+    }
+  },
+  "form": {
+    "enabled": true,
+    "success_message": "Cảm ơn bạn đã gửi tin nhắn! Tôi sẽ phản hồi sớm.",
+    "error_message": "Đã có lỗi xảy ra. Vui lòng thử lại sau.",
+    "fields": [
+      {
+        "name": "name",
+        "label": "Họ tên",
+        "type": "text",
+        "placeholder": "Họ tên của bạn",
+        "required": true,
+        "min_length": 2,
+        "max_length": 100
+      },
+      {
+        "name": "email",
+        "label": "Email",
+        "type": "email",
+        "placeholder": "your.email@example.com",
+        "required": true,
+        "max_length": 254
+      },
+      {
+        "name": "subject",
+        "label": "Tiêu đề",
+        "type": "text",
+        "placeholder": "Bạn muốn trao đổi về vấn đề gì?",
+        "required": true,
+        "min_length": 5,
+        "max_length": 200
+      },
+      {
+        "name": "message",
+        "label": "Nội dung",
+        "type": "textarea",
+        "placeholder": "Hãy cho tôi biết về dự án hoặc câu hỏi của bạn...",
+        "required": true,
+        "min_length": 10,
+        "max_length": 5000
+      }
+    ]
+  },
+  "contact_info": {
+    "email": "thaianhdang032004@gmail.com",
+    "phone": "0974042904",
+    "location": "Hà Nội, Việt Nam",
+    "timezone": "Asia/Hanoi",
+    "availability": "open_to_work",
+    "availability_text": "Hiện đang sẵn sàng cho các cơ hội mới",
+    "response_time": "Trong vòng 24 giờ"
+  },
+  "socials": [
+    {
+      "name": "GitHub",
+      "url": "https://github.com/ThaiAnhDV",
+      "icon": "bi-github",
+      "color": "#333333"
+    },
+    {
+      "name": "LinkedIn",
+      "url": "https://www.linkedin.com/in/th%C3%A1i-anh-%C4%91%E1%BA%B7ng-v%C4%83n-4b8a47372/",
+      "icon": "bi-linkedin",
+      "color": "#0077b5"
+    },
+    {
+      "name": "Email",
+      "url": "thaianhdang032004@gmail.com",
+      "icon": "bi-envelope",
+      "color": "#ea4335"
+    },
+    {
+      "name": "CV",
+      "url": "assets/pdf/cv/resume.pdf",
+      "icon": "bi-file-earmark-text",
+      "color": "#0d6efd"
+    }
+  ]
+}

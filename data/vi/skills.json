@@ -1,0 +1,110 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "section": {
+    "title": "Kỹ năng kỹ thuật",
+    "subtitle": "Các công nghệ tôi sử dụng"
+  },
+  "skill_categories": [
+    {
+      "id": "programming-languages",
+      "name": "Ngôn ngữ lập trình",
+      "icon": "bi-code-slash",
+      "description": "Các ngôn ngữ lập trình được sử dụng trong phát triển phần mềm.",
+      "order": 1,
+      "skills": [
+        { "name": "C#", "level": 85, "icon": "logos/csharp.svg", "years": 2 },
+        { "name": "Dart", "level": 80, "icon": "logos/dart.svg", "years": 1 },
+        { "name": "Java", "level": 70, "icon": "logos/java.svg", "years": 2 },
+        { "name": "JavaScript", "level": 70, "icon": "logos/javascript.svg", "years": 2 },
+        { "name": "SQL", "level": 85, "icon": "logos/sqlserver.svg", "years": 2 }
+      ]
+    },
+    {
+      "id": "backend",
+      "name": "Phát triển Backend",
+      "icon": "bi-server",
+      "description": "Xây dựng RESTful API và các ứng dụng doanh nghiệp.",
+      "order": 2,
+      "skills": [
+        { "name": "ASP.NET Core", "level": 85, "icon": "logos/dotnet.svg" },
+        { "name": "REST API", "level": 85, "icon": "icons/custom/api.svg" },
+        { "name": "Entity Framework Core", "level": 80, "icon": "icons/custom/database.svg" },
+        { "name": "JWT Authentication", "level": 80, "icon": "icons/custom/jwt.svg" },
+        { "name": "AJAX", "level": 75, "icon": "icons/custom/web.svg" }
+      ]
+    },
+    {
+      "id": "mobile",
+      "name": "Phát triển di động",
+      "icon": "bi-phone",
+      "description": "Phát triển ứng dụng di động đa nền tảng.",
+      "order": 3,
+      "skills": [
+        { "name": "Flutter", "level": 80, "icon": "logos/flutter.svg" },
+        { "name": "Firebase", "level": 80, "icon": "logos/firebase.svg" }
+      ]
+    },
+    {
+      "id": "artificial-intelligence",
+      "name": "Trí tuệ nhân tạo",
+      "icon": "bi-cpu",
+      "description": "Phát triển các giải pháp phần mềm tích hợp AI.",
+      "order": 4,
+      "skills": [
+        { "name": "Gemini,Claude API", "level": 80, "icon": "icons/custom/ai.svg" },
+        { "name": "Prompt Engineering", "level": 85, "icon": "icons/custom/prompt.svg" },
+        { "name": "LLM Integration", "level": 75, "icon": "icons/custom/llm.svg" },
+        { "name": "AI Workflow Design", "level": 75, "icon": "icons/custom/workflow.svg" }
+      ]
+    },
+    {
+      "id": "database",
+      "name": "Cơ sở dữ liệu",
+      "icon": "bi-database",
+      "description": "Thiết kế và quản trị cơ sở dữ liệu.",
+      "order": 5,
+      "skills": [
+        { "name": "SQL Server", "level": 85, "icon": "logos/sqlserver.svg" },
+        { "name": "Firestore", "level": 75, "icon": "logos/firebase.svg" },
+        { "name": "My SQL", "level": 75, "icon": "logos/firebase.svg" }
+      ]
+    },
+    {
+      "id": "architecture",
+      "name": "Kiến trúc phần mềm",
+      "icon": "bi-diagram-3",
+      "description": "Kiến trúc phần mềm doanh nghiệp và các design pattern.",
+      "order": 6,
+      "skills": [
+        { "name": "Clean Architecture", "level": 80, "icon": "icons/custom/clean-architecture.svg" },
+        { "name": "Domain-Driven Design", "level": 75, "icon": "icons/custom/ddd.svg" },
+        { "name": "CQRS", "level": 75, "icon": "icons/custom/cqrs.svg" },
+        { "name": "Repository Pattern", "level": 85, "icon": "icons/custom/repository.svg" }
+      ]
+    },
+    {
+      "id": "tools",
+      "name": "Công cụ phát triển",
+      "icon": "bi-tools",
+      "description": "Các công cụ phát triển và cộng tác hằng ngày.",
+      "order": 7,
+      "skills": [
+        { "name": "Git", "level": 85, "icon": "logos/git.svg" },
+        { "name": "GitHub", "level": 85, "icon": "logos/github.svg" },
+        { "name": "Docker", "level": 70, "icon": "logos/docker.svg" },
+        { "name": "Swagger", "level": 85, "icon": "icons/custom/swagger.svg" },
+        { "name": "Visual Studio", "level": 90, "icon": "logos/visualstudio.svg" },
+        { "name": "VS Code", "level": 90, "icon": "logos/vscode.svg" }
+      ]
+    }
+  ],
+  "languages": [
+    {
+      "name": "Tiếng Anh",
+      "level": "Trung cấp (Mục tiêu TOEIC 700+)"
+    }
+  ],
+  "ui": {
+    "card_title": "Ngoại ngữ"
+  }
+}

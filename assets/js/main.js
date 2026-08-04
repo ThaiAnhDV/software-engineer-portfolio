@@ -163,6 +163,28 @@
   }
 
   // =========================================================
+  // I18N HELPERS
+  // =========================================================
+
+  /**
+   * Resolve a dotted path against the localized portfolio data.
+   * Returns undefined if anything is missing.
+   */
+  function t(path) {
+    const data = window.PortfolioRenderer?.data;
+    if (!data) return undefined;
+    return path.split('.').reduce((acc, key) => (acc ? acc[key] : undefined), data);
+  }
+
+  /**
+   * Read a UI string from the localized data with optional fallback.
+   */
+  function uiString(path, fallback) {
+    const value = t(path);
+    return value !== undefined && value !== null ? value : fallback;
+  }
+
+  // =========================================================
   // FORM HANDLER
   // =========================================================
   class FormHandler {
@@ -243,16 +265,17 @@
 
       if (!value) {
         isValid = false;
-        errorMessage = 'This field is required';
+        errorMessage = uiString('contact.ui.validation.required', '');
       } else if (input.type === 'email' && !this.isValidEmail(value)) {
         isValid = false;
-        errorMessage = 'Please enter a valid email address';
+        errorMessage = uiString('contact.ui.validation.email_invalid', '');
       } else if (input.type === 'email' && !this.isValidEmailDomain(value)) {
         isValid = false;
-        errorMessage = 'Please enter a valid email domain';
+        errorMessage = uiString('contact.ui.validation.email_domain_invalid', '');
       } else if (input.minLength && value.length < input.minLength) {
         isValid = false;
-        errorMessage = `Please enter at least ${input.minLength} characters`;
+        const minTemplate = uiString('contact.ui.validation.min_length', '');
+        errorMessage = minTemplate ? minTemplate.replace('{n}', input.minLength) : '';
       }
 
       if (!isValid) {
@@ -305,9 +328,11 @@
       const alert = document.createElement('div');
       alert.className = 'alert alert-success alert-dismissible fade show';
       alert.setAttribute('role', 'alert');
+      const successText = uiString('contact.ui.alerts.success', '');
+      const closeLabel = uiString('contact.ui.alerts.close', '');
       alert.innerHTML = `
-        <strong><i class="bi bi-check-circle me-2"></i>Success!</strong> Your message has been sent. I'll get back to you soon.
-        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+        <strong><i class="bi bi-check-circle me-2"></i></strong> ${this.escapeAttr(successText)}
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="${this.escapeAttr(closeLabel)}"></button>
       `;
 
       // Insert alert before form
@@ -327,6 +352,13 @@
         const bsAlert = bootstrap?.Alert?.getOrCreateInstance(alert);
         bsAlert?.close();
       }, 5000);
+    }
+
+    escapeAttr(value) {
+      if (value === null || value === undefined) return '';
+      return String(value)
+        .replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;')
+        .replace(/"/g, '&quot;').replace(/'/g, '&#39;');
     }
   }
 
@@ -379,7 +411,9 @@
   class Typewriter {
     constructor(element, options = {}) {
       this.element = element;
-      this.words = options.words || ['Software Engineer', 'Full Stack Developer', 'Problem Solver'];
+      this.words = Array.isArray(options.words) && options.words.length
+        ? options.words
+        : [];
       this.typeSpeed = options.typeSpeed || 100;
       this.deleteSpeed = options.deleteSpeed || 50;
       this.pauseDelay = options.pauseDelay || 2000;
@@ -522,26 +556,24 @@
     updateYear();
 
     // Initialize typewriter using title(s) provided by the renderer
-    // (profile.meta.author_title, optionally profile.meta.roles[]).
-    // Falls back to a single neutral default only if no data was rendered.
+    // (profile.meta.roles[] or profile.meta.author_title).
+    // Renders nothing if no data is available.
     const typewriterElement = document.getElementById('typewriter');
     if (typewriterElement) {
       const profileData = window.PortfolioRenderer?.data?.profile;
-      const roles = profileData?.meta?.roles;
+      const roles = Array.isArray(profileData?.meta?.roles) ? profileData.meta.roles : null;
       const authorTitle = profileData?.meta?.author_title;
-      const wordsFromData = (Array.isArray(roles) && roles.length
-        ? roles
-        : null)
-        || (authorTitle
-          ? [authorTitle]
-          : ['Software Engineer']);
+      const wordsFromData = (roles && roles.length ? roles : null)
+        || (authorTitle ? [authorTitle] : null);
 
-      new Typewriter(typewriterElement, {
-        words: wordsFromData,
-        typeSpeed: 80,
-        deleteSpeed: 40,
-        pauseDelay: 2500
-      });
+      if (wordsFromData && wordsFromData.length) {
+        new Typewriter(typewriterElement, {
+          words: wordsFromData,
+          typeSpeed: 80,
+          deleteSpeed: 40,
+          pauseDelay: 2500
+        });
+      }
     }
 
     // Mark body as loaded

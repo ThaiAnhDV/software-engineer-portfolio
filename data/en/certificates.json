@@ -1,0 +1,21 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "section": {
+    "title": "Achievements & Certifications",
+    "subtitle": "Continuous Learning"
+  },
+  "ui": {
+    "buttons": {
+      "verify": "Verify",
+      "issuer": "Issuer"
+    },
+    "labels": {
+      "verify": "Verify",
+      "issuer": "Issuer",
+      "issued": "Issued",
+      "id": "ID"
+    },
+    "alt_fallback": "Certificate"
+  },
+  "certificates": []
+}

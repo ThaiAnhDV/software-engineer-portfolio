@@ -135,14 +135,20 @@
 
       const icon = this.toggleButton.querySelector('i');
       if (icon) {
+        const lightLabel = this.toggleButton.getAttribute('data-label-light');
+        const darkLabel = this.toggleButton.getAttribute('data-label-dark');
         if (theme === 'dark') {
           icon.className = 'bi bi-sun-fill';
-          this.toggleButton.setAttribute('aria-label', 'Switch to light mode');
-          this.toggleButton.setAttribute('title', 'Switch to light mode');
+          if (lightLabel) {
+            this.toggleButton.setAttribute('aria-label', lightLabel);
+            this.toggleButton.setAttribute('title', lightLabel);
+          }
         } else {
           icon.className = 'bi bi-moon-fill';
-          this.toggleButton.setAttribute('aria-label', 'Switch to dark mode');
-          this.toggleButton.setAttribute('title', 'Switch to dark mode');
+          if (darkLabel) {
+            this.toggleButton.setAttribute('aria-label', darkLabel);
+            this.toggleButton.setAttribute('title', darkLabel);
+          }
         }
       }
     }
@@ -250,6 +256,13 @@
   // =========================================================
   // Create global theme manager instance
   window.PortfolioTheme = new ThemeManager();
+
+  // Re-apply toggle icon once the renderer has populated the i18n labels.
+  window.addEventListener('portfolio:rendered', () => {
+    if (window.PortfolioTheme && typeof window.PortfolioTheme.currentTheme === 'string') {
+      window.PortfolioTheme.updateToggleIcon(window.PortfolioTheme.currentTheme);
+    }
+  });
 
   // Export for module usage
   if (typeof module !== 'undefined' && module.exports) {

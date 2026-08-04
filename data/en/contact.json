@@ -1,0 +1,109 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "section": {
+    "title": "Contact",
+    "subtitle": "Let's Build Something Amazing Together"
+  },
+  "ui": {
+    "form_labels": {
+      "name": "Name",
+      "email": "Email",
+      "subject": "Subject",
+      "message": "Message"
+    },
+    "button": {
+      "send": "Send Message"
+    },
+    "footer": {
+      "email_label": "Email",
+      "location_label": "Location"
+    },
+    "validation": {
+      "required": "This field is required",
+      "email_invalid": "Please enter a valid email address",
+      "email_domain_invalid": "Please enter a valid email domain",
+      "min_length": "Please enter at least {n} characters"
+    },
+    "alerts": {
+      "success": "Success! Your message has been sent. I'll get back to you soon.",
+      "close": "Close"
+    }
+  },
+  "form": {
+    "enabled": true,
+    "success_message": "Thank you for your message! I'll get back to you soon.",
+    "error_message": "Something went wrong. Please try again later.",
+    "fields": [
+      {
+        "name": "name",
+        "label": "Name",
+        "type": "text",
+        "placeholder": "Your Name",
+        "required": true,
+        "min_length": 2,
+        "max_length": 100
+      },
+      {
+        "name": "email",
+        "label": "Email",
+        "type": "email",
+        "placeholder": "your.email@example.com",
+        "required": true,
+        "max_length": 254
+      },
+      {
+        "name": "subject",
+        "label": "Subject",
+        "type": "text",
+        "placeholder": "What's this about?",
+        "required": true,
+        "min_length": 5,
+        "max_length": 200
+      },
+      {
+        "name": "message",
+        "label": "Message",
+        "type": "textarea",
+        "placeholder": "Tell me about your project or question...",
+        "required": true,
+        "min_length": 10,
+        "max_length": 5000
+      }
+    ]
+  },
+  "contact_info": {
+    "email": "thaianhdang032004@gmail.com",
+    "phone": "0974042904",
+    "location": "Ha Noi, Vietnam",
+    "timezone": "Asia/Hanoi",
+    "availability": "open_to_work",
+    "availability_text": "Currently available for new opportunities",
+    "response_time": "Within 24 hours"
+  },
+  "socials": [
+    {
+      "name": "GitHub",
+      "url": "https://github.com/ThaiAnhDV",
+      "icon": "bi-github",
+      "color": "#333333"
+    },
+    {
+      "name": "LinkedIn",
+      "url": "https://www.linkedin.com/in/th%C3%A1i-anh-%C4%91%E1%BA%B7ng-v%C4%83n-4b8a47372/",
+      "icon": "bi-linkedin",
+      "color": "#0077b5"
+    },
+    {
+      "name": "Email",
+      "url": "thaianhdang032004@gmail.com",
+      "icon": "bi-envelope",
+      "color": "#ea4335"
+    },
+    {
+      "name": "Resume",
+      "url": "assets/pdf/cv/resume.pdf",
+      "icon": "bi-file-earmark-text",
+      "color": "#0d6efd"
+    }
+  ]
+}

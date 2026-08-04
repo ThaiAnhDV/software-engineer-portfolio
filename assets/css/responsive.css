@@ -318,6 +318,7 @@
   .site-header,
   .site-footer,
   .theme-toggle-wrapper,
+  .language-switch,
   .btn,
   .social-links {
     display: none !important;

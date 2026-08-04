@@ -1,0 +1,181 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "section": {
+    "title": "Dự án nổi bật",
+    "subtitle": "Các dự án Kỹ thuật Phần mềm được chọn lọc"
+  },
+  "ui": {
+    "buttons": {
+      "view_code": "Xem mã nguồn",
+      "live_demo": "Demo trực tiếp",
+      "view_details": "Xem chi tiết",
+      "close": "Đóng",
+      "featured": "Nổi bật"
+    },
+    "badges": {
+      "featured": "Nổi bật"
+    },
+    "modal": {
+      "title": "Chi tiết dự án",
+      "close": "Đóng",
+      "view_code": "Xem mã nguồn",
+      "live_demo": "Demo trực tiếp",
+      "problem": "Vấn đề",
+      "solution": "Giải pháp",
+      "features": "Tính năng chính",
+      "architecture": "Kiến trúc",
+      "responsibilities": "Trách nhiệm",
+      "challenges": "Thách thức",
+      "case_study": "Nghiên cứu điển hình",
+      "diagram": "Sơ đồ kiến trúc",
+      "technologies": "Công nghệ sử dụng",
+      "gallery": "Thư viện ảnh"
+    }
+  },
+  "projects": [
+    {
+      "id": "ai-interview-platform",
+      "title": "Nền tảng phỏng vấn AI",
+      "category": "Phần mềm AI",
+      "featured": true,
+      "short_description": "Một nền tảng chuẩn bị phỏng vấn tích hợp AI, phân tích CV, xác định khoảng cách kỹ năng, tạo lộ trình học tập cá nhân hóa và thực hiện các buổi phỏng vấn kỹ thuật mô phỏng.",
+      "description": "Một nền tảng phát triển nghề nghiệp toàn diện tích hợp AI, giúp sinh viên chuẩn bị cho các buổi phỏng vấn kỹ thuật thông qua phân tích CV, đối chiếu mô tả công việc, phân tích khoảng cách kỹ năng, tạo lộ trình học tập và đánh giá phỏng vấn bằng AI.",
+      "thumbnail": "assets/images/mockups/aiinterview.png",
+      "thumbnail_alt": "Bảng điều khiển Nền tảng phỏng vấn AI",
+      "technologies": [
+        "ASP.NET Core",
+        "Razor Pages",
+        "SQL Server",
+        "Entity Framework Core",
+        "Gemini API",
+        "JWT",
+        "Bootstrap"
+      ],
+      "links": {
+        "github": "https://github.com/ThaiAnhDV/AIInterview",
+        "demo": "http://aiinterview.io.vn/"
+      },
+      "details": {
+        "problem": "Sinh viên thường gặp khó khăn trong việc hiểu mức độ sẵn sàng của mình cho các công việc mục tiêu và thiếu sự hướng dẫn cá nhân hóa để chuẩn bị phỏng vấn.",
+        "solution": "Phát triển một nền tảng tích hợp AI có khả năng phân tích CV và mô tả công việc, tính toán điểm sẵn sàng, xác định các kỹ năng còn thiếu, tạo lộ trình học tập và thực hiện phỏng vấn mô phỏng với đánh giá bằng AI.",
+        "features": [
+          "Quản lý CV",
+          "Quản lý công việc mục tiêu",
+          "Phân tích khoảng cách kỹ năng",
+          "Phân tích CV bằng AI",
+          "Điểm sẵn sàng",
+          "Tạo lộ trình học tập",
+          "Phỏng vấn mô phỏng bằng AI",
+          "Bảng điều khiển đánh giá phỏng vấn"
+        ],
+        "architecture": [
+          "Clean Architecture",
+          "Repository Pattern",
+          "REST API",
+          "JWT Authentication"
+        ],
+        "responsibilities": [
+          "Phát triển Backend",
+          "Thiết kế cơ sở dữ liệu",
+          "Tích hợp AI",
+          "Phân tích nghiệp vụ",
+          "Kiến trúc hệ thống"
+        ],
+        "challenges": "Thiết kế các quy trình AI đáng tin cậy và tích hợp Large Language Models vào quy trình kỹ thuật phần mềm."
+      },
+      "order": 1
+    },
+    {
+      "id": "hotel-management-system",
+      "title": "Hệ thống quản lý khách sạn",
+      "category": "Ứng dụng di động",
+      "featured": true,
+      "short_description": "Một ứng dụng quản lý khách sạn đa nền tảng hỗ trợ đặt phòng, quản lý khách hàng, thanh toán và các thao tác quản trị.",
+      "description": "Một hệ thống quản lý khách sạn trên di động được phát triển bằng Flutter và Firebase, hỗ trợ quản lý đặt phòng, quản lý phòng, quản lý khách hàng, theo dõi thanh toán và các bảng điều khiển quản trị.",
+      "thumbnail": "assets/projects/hotel-booking/thumbnail.webp",
+      "thumbnail_alt": "Hệ thống quản lý khách sạn",
+      "technologies": [
+        "Flutter",
+        "Firebase",
+        "Firestore",
+        "FCM",
+        "Provider"
+      ],
+      "links": {
+        "github": "",
+        "demo": ""
+      },
+      "details": {
+        "problem": "Các khách sạn vừa và nhỏ cần một giải pháp số giá cả phải chăng để quản lý đặt phòng và vận hành.",
+        "solution": "Phát triển một ứng dụng quản lý khách sạn ưu tiên di động với backend Firebase và đồng bộ hóa theo thời gian thực.",
+        "features": [
+          "Quản lý phòng",
+          "Quản lý đặt phòng",
+          "Quản lý khách hàng",
+          "Theo dõi thanh toán",
+          "Bảng điều khiển doanh thu",
+          "Quản lý nhân viên",
+          "Thông báo"
+        ],
+        "architecture": [
+          "Flutter Architecture",
+          "Firebase",
+          "MVVM"
+        ],
+        "responsibilities": [
+          "Trưởng nhóm",
+          "Kiến trúc dự án",
+          "Tích hợp Backend",
+          "Chia sẻ mô hình dữ liệu"
+        ],
+        "challenges": "Phối hợp một nhóm phát triển nhiều thành viên trong khi vẫn duy trì kiến trúc và hợp đồng dữ liệu nhất quán."
+      },
+      "order": 2
+    },
+    {
+      "id": "salesphere-management-system",
+      "title": "Hệ thống quản lý SaleSphere",
+      "category": "Phần mềm doanh nghiệp",
+      "featured": true,
+      "short_description": "Một hệ thống quản lý bán hàng doanh nghiệp hỗ trợ quản lý sản phẩm, kho hàng, khách hàng và báo cáo doanh số.",
+      "description": "Một hệ thống quản lý doanh nghiệp dựa trên web được thiết kế để tối ưu hóa vận hành kinh doanh, quản lý kho hàng, quản lý khách hàng và báo cáo.",
+      "thumbnail": "assets/projects/salesphere/thumbnail.webp",
+      "thumbnail_alt": "Hệ thống quản lý SaleSphere",
+      "technologies": [
+        "ASP.NET Core",
+        "SQL Server",
+        "Entity Framework Core",
+        "Bootstrap",
+        "JavaScript"
+      ],
+      "links": {
+        "github": "",
+        "demo": ""
+      },
+      "details": {
+        "problem": "Doanh nghiệp cần một nền tảng tập trung để quản lý sản phẩm, khách hàng, kho hàng và các hoạt động bán hàng.",
+        "solution": "Thiết kế và triển khai một hệ thống quản lý doanh nghiệp tuân theo các thực hành kỹ thuật phần mềm hiện đại.",
+        "features": [
+          "Quản lý sản phẩm",
+          "Quản lý kho hàng",
+          "Quản lý khách hàng",
+          "Quản lý bán hàng",
+          "Báo cáo doanh thu",
+          "Xác thực theo vai trò"
+        ],
+        "architecture": [
+          "Layered Architecture",
+          "Repository Pattern",
+          "REST API"
+        ],
+        "responsibilities": [
+          "Thiết kế hệ thống",
+          "Phát triển Backend",
+          "Thiết kế cơ sở dữ liệu"
+        ],
+        "challenges": "Thiết kế các quy trình nghiệp vụ có khả năng mở rộng trong khi vẫn giữ code sạch và dễ bảo trì."
+      },
+      "order": 3
+    }
+  ]
+}

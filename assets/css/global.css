@@ -417,6 +417,173 @@ pre code {
 }
 
 /* =========================================================
+   LANGUAGE SWITCH (Navbar)
+   Pill design with flag + ISO code; matches the navbar
+   typography (1rem nav-link, var(--color-text)).
+   ========================================================= */
+
+.language-switch {
+  display: inline-flex;
+  align-items: center;
+}
+
+.language-switch__option {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  padding: 0.4rem 0.55rem;
+  background: transparent;
+  border: 0;
+  color: var(--color-text-muted);
+  font-size: 1rem;
+  font-weight: 500;
+  line-height: 1;
+  letter-spacing: 0.02em;
+  cursor: pointer;
+  border-radius: var(--radius-md);
+  transition:
+    color var(--transition-base),
+    background-color var(--transition-base),
+    transform var(--transition-fast);
+}
+
+.language-switch__option:hover {
+  color: var(--color-text);
+  background-color: var(--color-bg-soft);
+}
+
+.language-switch__option:focus-visible {
+  outline: 2px solid var(--color-primary);
+  outline-offset: 2px;
+}
+
+.language-switch__option:active {
+  transform: scale(0.96);
+}
+
+.language-switch__option.is-active {
+  color: var(--color-primary);
+  font-weight: 600;
+}
+
+.language-switch__option.is-active::after {
+  /* subtle underline pill behind the active language */
+  content: "";
+  position: absolute;
+  /* no positioning needed; uses sibling instead */
+  display: none;
+}
+
+.language-switch__flag {
+  font-size: 1.05rem;
+  line-height: 1;
+}
+
+.language-switch__code {
+  font-size: 0.875rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
+.language-switch__divider {
+  display: inline-flex;
+  align-items: center;
+  color: var(--color-border-dark);
+  font-size: 1rem;
+  user-select: none;
+  padding: 0 0.15rem;
+}
+
+/* Desktop (inline pill) */
+.language-switch--desktop {
+  align-self: center;
+  padding: 0;
+}
+
+.language-switch--desktop .language-switch__option {
+  position: relative;
+  padding: 0.45rem 0.65rem;
+}
+
+.language-switch--desktop .language-switch__option.is-active::after {
+  /* sliding underline accent */
+  content: "";
+  position: absolute;
+  left: 0.5rem;
+  right: 0.5rem;
+  bottom: 0.15rem;
+  height: 2px;
+  border-radius: var(--radius-full);
+  background-color: var(--color-primary);
+  animation: lang-underline 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+@keyframes lang-underline {
+  from { transform: scaleX(0); opacity: 0; }
+  to   { transform: scaleX(1); opacity: 1; }
+}
+
+/* Mobile (stacked under the drawer) */
+.language-switch--mobile {
+  display: none;
+  flex-direction: column;
+  gap: var(--space-3);
+  padding: var(--space-3) var(--space-4);
+  margin-top: var(--space-3);
+  border-top: 1px solid var(--color-border-light);
+}
+
+.language-switch__label {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+  color: var(--color-text-secondary);
+  font-size: 0.875rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
+.language-switch__label i {
+  font-size: 1rem;
+}
+
+.language-switch__stack {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+}
+
+.language-switch__option--stacked {
+  flex: 1;
+  justify-content: center;
+  padding: 0.6rem 0.8rem;
+  background-color: var(--color-bg-soft);
+  border: 1px solid transparent;
+  border-radius: var(--radius-md);
+  transition:
+    background-color var(--transition-base),
+    border-color var(--transition-base),
+    color var(--transition-base),
+    transform var(--transition-fast);
+}
+
+.language-switch__option--stacked.is-active {
+  background-color: var(--color-primary);
+  border-color: var(--color-primary);
+  color: #fff;
+}
+
+.language-switch__option--stacked.is-active:hover {
+  background-color: var(--color-primary-hover);
+}
+
+@media (max-width: 991.98px) {
+  .language-switch--mobile {
+    display: flex;
+  }
+}
+
+/* =========================================================
    SECTIONS
    ========================================================= */
 section {

@@ -83,55 +83,63 @@
 
 <body>
   <!-- Skip to main content (Accessibility) -->
-  <a href="#main-content" class="skip-link">Skip to main content</a>
+  <a href="#main-content" class="skip-link"></a>
 
   <!-- =========================================================
        NAVIGATION
        ========================================================= -->
   <header id="site-header" class="site-header">
-    <nav class="navbar navbar-expand-lg" aria-label="Primary navigation">
+    <nav class="navbar navbar-expand-lg" aria-label="">
       <div class="container">
         <!-- Logo -->
-        <a class="navbar-brand" href="#home" aria-label="Home">
-          <img class="brand-logo" src="assets/icons/logo.svg" alt="TA — Software Engineer Portfolio" width="40" height="40" />
+        <a class="navbar-brand" href="#home" aria-label="">
+          <img class="brand-logo" src="assets/icons/logo.svg" alt="" width="40" height="40" />
         </a>
 
         <!-- Mobile Toggle -->
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#primary-menu" aria-controls="primary-menu" aria-expanded="false" aria-label="Toggle navigation">
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#primary-menu" aria-controls="primary-menu" aria-expanded="false" aria-label="">
           <span class="navbar-toggler-icon"></span>
         </button>
 
         <!-- Navigation Menu -->
         <div class="collapse navbar-collapse" id="primary-menu">
           <ul class="navbar-nav ms-auto">
-            <li class="nav-item">
-              <a class="nav-link" href="#home" data-section="home">Home</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#about" data-section="about">About</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#skills" data-section="skills">Skills</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#projects" data-section="projects">Projects</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#experience" data-section="experience">Experience</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#certificates" data-section="certificates">Certificates</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#contact" data-section="contact">Contact</a>
-            </li>
+            <!-- Populated from JSON (profile.navigation.primary) -->
           </ul>
+
+          <!-- Language Switch (Desktop) -->
+          <div class="language-switch language-switch--desktop d-none d-lg-flex ms-lg-3" data-language-switch aria-label="Language switcher" role="group">
+            <button type="button" class="language-switch__option" data-language-option="vi" aria-label="Switch language to Vietnamese" aria-pressed="false">
+              <span class="language-switch__flag" aria-hidden="true">🇻🇳</span>
+              <span class="language-switch__code">VI</span>
+            </button>
+            <span class="language-switch__divider" aria-hidden="true">|</span>
+            <button type="button" class="language-switch__option" data-language-option="en" aria-label="Switch language to English" aria-pressed="false">
+              <span class="language-switch__code">EN</span>
+              <span class="language-switch__flag" aria-hidden="true">🇺🇸</span>
+            </button>
+          </div>
 
           <!-- Theme Toggle -->
           <div class="theme-toggle-wrapper ms-lg-3">
-            <button class="theme-toggle" id="theme-toggle" aria-label="Toggle theme" title="Toggle dark/light mode">
+            <button class="theme-toggle" id="theme-toggle" aria-label="" title="">
               <i class="bi bi-moon-fill" aria-hidden="true"></i>
             </button>
+          </div>
+
+          <!-- Language Switch (Mobile Drawer) -->
+          <div class="language-switch language-switch--mobile d-lg-none" data-language-switch aria-label="Language switcher" role="group">
+            <span class="language-switch__label"><i class="bi bi-globe" aria-hidden="true"></i><span>Language</span></span>
+            <div class="language-switch__stack">
+              <button type="button" class="language-switch__option language-switch__option--stacked" data-language-option="vi" aria-label="Switch language to Vietnamese" aria-pressed="false">
+                <span class="language-switch__flag" aria-hidden="true">🇻🇳</span>
+                <span class="language-switch__code">VI</span>
+              </button>
+              <button type="button" class="language-switch__option language-switch__option--stacked" data-language-option="en" aria-label="Switch language to English" aria-pressed="false">
+                <span class="language-switch__flag" aria-hidden="true">🇺🇸</span>
+                <span class="language-switch__code">EN</span>
+              </button>
+            </div>
           </div>
         </div>
       </div>
@@ -146,13 +154,19 @@
     <!-- =====================================================
          HOME SECTION
          ===================================================== -->
-    <section id="home" class="hero-section">
+    <section id="home" class="hero-section" aria-label="">
       <div class="container">
         <div class="row align-items-center min-vh-100 py-5">
 
           <!-- Hero Content -->
           <div class="col-lg-7 order-2 order-lg-1">
             <div class="hero-content">
+              <!-- Availability Badge (text + icon come from profile.hero.availability / badge_icon) -->
+              <span class="hero-badge" hidden>
+                <i class="bi" aria-hidden="true"></i>
+                <span class="hero-badge__text"></span>
+              </span>
+
               <!-- Greeting -->
               <p class="hero-greeting" data-json="profile.hero.greeting">
                 <span class="hero-greeting-line"></span>
@@ -161,7 +175,7 @@
               <!-- Name -->
               <h1 class="hero-name" data-json="profile.meta.author"></h1>
 
-              <!-- Title (rendered into #typewriter by renderer from profile.meta.author_title) -->
+              <!-- Title (rendered into #typewriter by renderer from profile.meta.author_title / meta.roles) -->
               <h2 class="hero-title">
                 <span class="typewriter" id="typewriter"></span>
               </h2>
@@ -169,12 +183,12 @@
               <!-- Description -->
               <p class="hero-description" data-json="profile.hero.headline"></p>
 
-              <!-- CTA Buttons -->
+              <!-- CTA Buttons (label + aria-label come from profile.hero.cta_primary / cta_secondary) -->
               <div class="hero-cta">
-                <a href="#" class="btn btn-primary btn-lg" data-json="profile.hero.cta_primary.href">
+                <a href="#" class="btn btn-primary btn-lg" data-json="profile.hero.cta_primary.href" aria-label="">
                   <i class="bi bi-folder me-2"></i>
                 </a>
-                <a href="#" class="btn btn-outline-primary btn-lg" data-json="profile.hero.cta_secondary.href">
+                <a href="#" class="btn btn-outline-primary btn-lg" data-json="profile.hero.cta_secondary.href" aria-label="">
                   <i class="bi bi-envelope me-2"></i>
                 </a>
               </div>
@@ -211,8 +225,8 @@
       </div>
 
       <!-- Scroll Indicator -->
-      <a href="#about" class="scroll-indicator" aria-label="Scroll to About section">
-        <span class="scroll-indicator-text">Scroll Down</span>
+      <a href="#about" class="scroll-indicator" aria-label="">
+        <span class="scroll-indicator-text"></span>
         <div class="scroll-indicator-mouse">
           <div class="scroll-indicator-wheel"></div>
         </div>
@@ -223,7 +237,7 @@
     <!-- =====================================================
          ABOUT SECTION
          ===================================================== -->
-    <section id="about" class="about-section">
+    <section id="about" class="about-section" aria-label="">
       <div class="container">
 
         <!-- Section Header -->
@@ -259,7 +273,7 @@
               <!-- Introduction -->
               <div class="about-block mb-5">
                 <h3 class="about-block-title">
-                  <i class="bi bi-person-circle me-2"></i>Introduction
+                  <i class="bi bi-person-circle me-2"></i>
                 </h3>
                 <p class="about-text" data-json="about.about.introduction.0"></p>
                 <p class="about-text mb-0" data-json="about.about.introduction.1"></p>
@@ -268,7 +282,7 @@
               <!-- Career Objective -->
               <div class="about-block mb-5">
                 <h3 class="about-block-title">
-                  <i class="bi bi-bullseye me-2"></i>Career Objective
+                  <i class="bi bi-bullseye me-2"></i>
                 </h3>
                 <p class="about-text mb-0" data-json="about.about.career_objective"></p>
               </div>
@@ -276,31 +290,31 @@
               <!-- Quick Info -->
               <div class="about-block mb-5">
                 <h3 class="about-block-title">
-                  <i class="bi bi-info-circle me-2"></i>Quick Info
+                  <i class="bi bi-info-circle me-2"></i>
                 </h3>
                 <div class="row g-3">
                   <div class="col-6 col-md-3">
                     <div class="about-quick-info">
                       <span class="about-quick-info-value"></span>
-                      <span class="about-quick-info-label">Age</span>
+                      <span class="about-quick-info-label"></span>
                     </div>
                   </div>
                   <div class="col-6 col-md-3">
                     <div class="about-quick-info">
                       <span class="about-quick-info-value"></span>
-                      <span class="about-quick-info-label">Location</span>
+                      <span class="about-quick-info-label"></span>
                     </div>
                   </div>
                   <div class="col-6 col-md-3">
                     <div class="about-quick-info">
                       <span class="about-quick-info-value"></span>
-                      <span class="about-quick-info-label">Experience</span>
+                      <span class="about-quick-info-label"></span>
                     </div>
                   </div>
                   <div class="col-6 col-md-3">
                     <div class="about-quick-info">
                       <span class="about-quick-info-value"></span>
-                      <span class="about-quick-info-label">Degree</span>
+                      <span class="about-quick-info-label"></span>
                     </div>
                   </div>
                 </div>
@@ -316,15 +330,15 @@
         <!-- Education Timeline (data sourced from experience.json > education) -->
         <div class="about-education mt-5 pt-5">
           <header class="section-header text-center mb-5">
-            <p class="section-subtitle" data-json="about.education.section_subtitle"></p>
-            <h3 class="section-title-sm" data-json="about.education.section_title"></h3>
+            <p class="section-subtitle" data-json="experience.education.section.subtitle"></p>
+            <h3 class="section-title-sm" data-json="experience.education.section.title"></h3>
           </header>
 
           <div class="row justify-content-center">
             <div class="col-lg-10">
-              <ol class="timeline timeline-education" aria-label="Education history">
-                <!-- Populated from experience.json → education -->
-              </ol>
+            <ol class="timeline timeline-education" aria-label="">
+              <!-- Populated from experience.json → education -->
+            </ol>
             </div>
           </div>
         </div>
@@ -335,13 +349,13 @@
     <!-- =====================================================
          SKILLS SECTION
          ===================================================== -->
-    <section id="skills" class="skills-section">
+    <section id="skills" class="skills-section" aria-label="">
       <div class="container">
 
         <!-- Section Header -->
         <header class="section-header text-center mb-5">
-          <p class="section-subtitle" data-json="about.skills.section_subtitle"></p>
-          <h2 class="section-title" data-json="about.skills.section_title"></h2>
+          <p class="section-subtitle" data-json="skills.section.subtitle"></p>
+          <h2 class="section-title" data-json="skills.section.title"></h2>
         </header>
 
         <!-- Skills Grid -->
@@ -358,7 +372,7 @@
           <div class="col-md-6">
             <div class="additional-skills-card">
               <h3 class="additional-skills-title">
-                <i class="bi bi-globe me-2"></i>Languages
+                <i class="bi bi-globe me-2"></i>
               </h3>
               <div class="languages-grid">
                 <!-- Populated from JSON -->
@@ -374,13 +388,13 @@
     <!-- =====================================================
          PROJECTS SECTION
          ===================================================== -->
-    <section id="projects" class="projects-section">
+    <section id="projects" class="projects-section" aria-label="">
       <div class="container">
 
         <!-- Section Header -->
         <header class="section-header text-center mb-5">
-          <p class="section-subtitle" data-json="about.projects.section_subtitle"></p>
-          <h2 class="section-title" data-json="about.projects.section_title"></h2>
+          <p class="section-subtitle" data-json="projects.section.subtitle"></p>
+          <h2 class="section-title" data-json="projects.section.title"></h2>
         </header>
 
         <!-- Projects Grid - Featured Row (Large Cards) -->
@@ -408,13 +422,13 @@
 
         <!-- Section Header -->
         <header class="section-header text-center mb-5">
-          <p class="section-subtitle" data-json="about.experience.section_subtitle"></p>
-          <h2 class="section-title" data-json="about.experience.section_title"></h2>
+          <p class="section-subtitle" data-json="experience.section.subtitle"></p>
+          <h2 class="section-title" data-json="experience.section.title"></h2>
         </header>
 
         <div class="row justify-content-center">
           <div class="col-lg-10">
-            <ol class="timeline" aria-label="Work experience timeline">
+            <ol class="timeline" aria-label="">
               <!-- Populated from JSON -->
             </ol>
           </div>
@@ -431,8 +445,8 @@
 
         <!-- Section Header -->
         <header class="section-header text-center mb-5">
-          <p class="section-subtitle" data-json="about.certificates.section_subtitle"></p>
-          <h2 class="section-title" data-json="about.certificates.section_title"></h2>
+          <p class="section-subtitle" data-json="certificates.section.subtitle"></p>
+          <h2 class="section-title" data-json="certificates.section.title"></h2>
         </header>
 
         <!-- Certificates Grid -->
@@ -446,13 +460,13 @@
     <!-- =====================================================
          CONTACT SECTION
          ===================================================== -->
-    <section id="contact" class="contact-section">
+    <section id="contact" class="contact-section" aria-label="">
       <div class="container">
 
         <!-- Section Header -->
         <header class="section-header text-center mb-5">
-          <p class="section-subtitle" data-json="about.contact.section_subtitle"></p>
-          <h2 class="section-title" data-json="about.contact.section_title"></h2>
+          <p class="section-subtitle" data-json="contact.section.subtitle"></p>
+          <h2 class="section-title" data-json="contact.section.title"></h2>
         </header>
 
         <div class="row g-5">
@@ -461,7 +475,7 @@
           <div class="col-lg-5">
             <div class="contact-info">
               <h3 class="contact-info-title" data-json="profile.branding.site_name"></h3>
-              <p class="contact-info-text" data-json="about.contact.section_subtitle"></p>
+              <p class="contact-info-text" data-json="contact.section.subtitle"></p>
 
               <div class="contact-info-list">
                 <div class="contact-info-item">
@@ -490,35 +504,35 @@
                 <div class="row g-3">
                   <div class="col-md-6">
                     <div class="form-group">
-                      <label for="name" class="form-label">Name</label>
+                      <label for="name" class="form-label"></label>
                       <input type="text" class="form-control" id="name" name="name" required />
                       <div class="form-error"></div>
                     </div>
                   </div>
                   <div class="col-md-6">
                     <div class="form-group">
-                      <label for="email" class="form-label">Email</label>
+                      <label for="email" class="form-label"></label>
                       <input type="email" class="form-control" id="email" name="email" required />
                       <div class="form-error"></div>
                     </div>
                   </div>
                   <div class="col-12">
                     <div class="form-group">
-                      <label for="subject" class="form-label">Subject</label>
+                      <label for="subject" class="form-label"></label>
                       <input type="text" class="form-control" id="subject" name="subject" required />
                       <div class="form-error"></div>
                     </div>
                   </div>
                   <div class="col-12">
                     <div class="form-group">
-                      <label for="message" class="form-label">Message</label>
+                      <label for="message" class="form-label"></label>
                       <textarea class="form-control" id="message" name="message" rows="5" required></textarea>
                       <div class="form-error"></div>
                     </div>
                   </div>
                   <div class="col-12">
                     <button type="submit" class="btn btn-primary btn-submit">
-                      <span class="btn-text">Send Message</span>
+                      <span class="btn-text"></span>
                       <span class="btn-loader">
                         <i class="bi bi-arrow-repeat"></i>
                       </span>
@@ -542,8 +556,8 @@
   <button
     class="back-to-top"
     id="back-to-top"
-    aria-label="Scroll back to top of page"
-    title="Back to top"
+    aria-label=""
+    title=""
   >
     <span class="back-to-top-icon">
       <i class="bi bi-arrow-up"></i>
@@ -564,12 +578,12 @@
           <div class="col-lg-4 col-md-6 order-lg-1 order-1">
             <div class="footer-brand">
               <a href="#home" class="footer-logo">
-                <img class="brand-logo" src="assets/icons/logo.svg" alt="TA — Software Engineer Portfolio" width="48" height="48" />
+                <img class="brand-logo" src="assets/icons/logo.svg" alt="" width="48" height="48" />
                 <span class="brand-name"></span>
               </a>
             </div>
             <p class="footer-description" data-json="profile.hero.headline"></p>
-            <div class="footer-social" role="list" aria-label="Social media links">
+            <div class="footer-social" role="list" aria-label="">
               <!-- Renderer injects <img>/<i> into each slot -->
               <a href="#" class="footer-social-link" target="_blank" rel="noopener noreferrer" role="listitem"><span class="social-icon"></span></a>
               <a href="#" class="footer-social-link" target="_blank" rel="noopener noreferrer" role="listitem"><span class="social-icon"></span></a>
@@ -580,15 +594,9 @@
           <!-- Navigation Column -->
           <div class="col-lg-2 col-md-6 order-lg-2 order-3">
             <nav aria-labelledby="footer-nav-heading">
-              <h3 class="footer-heading" id="footer-nav-heading">Navigation</h3>
+              <h3 class="footer-heading" id="footer-nav-heading"></h3>
               <ul class="footer-links" role="list">
-                <li role="listitem"><a href="#home">Home</a></li>
-                <li role="listitem"><a href="#about">About</a></li>
-                <li role="listitem"><a href="#skills">Skills</a></li>
-                <li role="listitem"><a href="#projects">Projects</a></li>
-                <li role="listitem"><a href="#experience">Experience</a></li>
-                <li role="listitem"><a href="#certificates">Certifications</a></li>
-                <li role="listitem"><a href="#contact">Contact</a></li>
+                <!-- Populated from JSON (profile.navigation.footer.navigation) -->
               </ul>
             </nav>
           </div>
@@ -596,18 +604,18 @@
           <!-- Contact Column -->
           <div class="col-lg-3 col-md-6 order-lg-3 order-4">
             <nav aria-labelledby="footer-contact-heading">
-              <h3 class="footer-heading" id="footer-contact-heading" data-json="about.contact.section_title"></h3>
+              <h3 class="footer-heading" id="footer-contact-heading" data-json="contact.section.title"></h3>
               <ul class="footer-contact-list" role="list">
                 <li role="listitem">
                   <a href="#" class="footer-contact-link">
                     <i class="bi bi-envelope" aria-hidden="true"></i>
-                    <span>Email</span>
+                    <span></span>
                   </a>
                 </li>
                 <li role="listitem">
                   <span class="footer-contact-item">
                     <i class="bi bi-geo-alt" aria-hidden="true"></i>
-                    <span>Haha</span>
+                    <span></span>
                   </span>
                 </li>
               </ul>
@@ -620,9 +628,7 @@
       <!-- Footer Bottom -->
       <div class="footer-bottom">
         <div class="footer-bottom-content">
-          <p class="footer-copyright">
-            &copy; <span id="current-year"></span> <span class="footer-author"></span>. All rights reserved.
-          </p>
+          <p class="footer-copyright"></p>
         </div>
       </div>
 
@@ -638,8 +644,15 @@
   <!-- Theme Toggle -->
   <script src="assets/js/theme.js"></script>
 
-  <!-- Portfolio Renderer (Data-Driven Content) -->
+  <!-- Language Layer (provider + service) -->
+  <script src="assets/js/language-provider.js"></script>
+  <script src="assets/js/language-service.js"></script>
+
+  <!-- Portfolio Renderer (Data-Driven Content, auto-init from <html lang>) -->
   <script src="assets/js/portfolio-renderer.js"></script>
+
+  <!-- Language Switch UI (uses LanguageService + Renderer) -->
+  <script src="assets/js/language-switch.js"></script>
 
   <!-- Main Application -->
   <script src="assets/js/main.js"></script>
