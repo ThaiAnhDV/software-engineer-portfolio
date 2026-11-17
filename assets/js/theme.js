@@ -109,21 +109,20 @@
     }
 
     /**
-     * Update CSS custom properties based on theme
+     * Update CSS custom properties based on theme.
+     * NOTE: The design tokens already live in CSS
+     * (:root for light, [data-bs-theme="dark"] for dark).
+     * We intentionally do NOT set inline custom properties here:
+     * inline styles would silently override future dark-mode tweaks
+     * made in global.css. This only cleans up props possibly left
+     * over from older versions.
      * @param {string} theme
      */
     updateCSSVariables(theme) {
       const root = document.documentElement;
-
-      if (theme === 'dark') {
-        root.style.setProperty('--color-bg', '#0d1117');
-        root.style.setProperty('--color-surface', '#161b22');
-        root.style.setProperty('--color-text', '#c9d1d9');
-      } else {
-        root.style.setProperty('--color-bg', '#ffffff');
-        root.style.setProperty('--color-surface', '#ffffff');
-        root.style.setProperty('--color-text', '#212529');
-      }
+      ['--color-bg', '--color-surface', '--color-text'].forEach((prop) => {
+        if (root.style.getPropertyValue(prop)) root.style.removeProperty(prop);
+      });
     }
 
     /**

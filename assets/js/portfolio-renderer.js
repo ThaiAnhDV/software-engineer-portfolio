@@ -59,15 +59,23 @@
 
     async init() {
       if (this.initialized) return;
-      try {
-        await this.loadData();
-        await this.render();
-        this.initialized = true;
-        document.body.classList.add('portfolio-rendered');
-        window.dispatchEvent(new CustomEvent('portfolio:rendered', { detail: { locale: this.locale } }));
-      } catch (error) {
-        console.error('[PortfolioRenderer] Init failed:', error);
-      }
+      // Share one in-flight init so the auto-start on DOMContentLoaded and
+      // the explicit call from main.js do not fetch + render twice.
+      if (this._initPromise) return this._initPromise;
+      this._initPromise = (async () => {
+        try {
+          await this.loadData();
+          await this.render();
+          this.initialized = true;
+          document.body.classList.add('portfolio-rendered');
+          window.dispatchEvent(new CustomEvent('portfolio:rendered', { detail: { locale: this.locale } }));
+        } catch (error) {
+          console.error('[PortfolioRenderer] Init failed:', error);
+        } finally {
+          this._initPromise = null;
+        }
+      })();
+      return this._initPromise;
     }
 
     /**
@@ -166,6 +174,23 @@
         catch (error) { console.error(`[PortfolioRenderer] ${method} failed:`, error); }
       }
       this.renderProjectModal();
+      this.syncNavVisibility();
+    }
+
+    /**
+     * Hide nav links (header + footer) whose target section was hidden
+     * (e.g. empty certificates). Runs after every render so it also
+     * works when renderNavigation ran before the sections were hidden.
+     */
+    syncNavVisibility() {
+      document.querySelectorAll('.navbar-nav .nav-link, .site-footer .footer-links a').forEach((link) => {
+        const href = link.getAttribute('href');
+        if (!href || !href.startsWith('#') || href === '#') return;
+        const section = document.getElementById(href.slice(1));
+        if (!section) return;
+        const hidden = section.classList.contains('d-none') || section.hasAttribute('hidden');
+        link.closest('li')?.classList.toggle('d-none', hidden);
+      });
     }
 
     // ==========================================================
@@ -584,20 +609,21 @@
 
       if (!projects.length) { this.hideSection('#projects'); return; }
 
-      const featured = projects.find((p) => p.featured) ?? null;
+      const featured = projects.filter((p) => p.featured);
       const rest = projects.filter((p) => !p.featured);
 
       this.renderFeaturedProject(featured);
       this.renderProjectGrid(rest);
     }
 
-    renderFeaturedProject(project) {
+    renderFeaturedProject(featured) {
       const wrap = document.querySelector('.projects-featured');
       const row = wrap?.querySelector('.row');
       if (!row) return;
-      if (!project) { wrap?.classList.add('d-none'); return; }
+      const list = Array.isArray(featured) ? featured : (featured ? [featured] : []);
+      if (!list.length) { wrap?.classList.add('d-none'); return; }
       wrap?.classList.remove('d-none');
-      row.innerHTML = `<div class="col-12">${this.renderProjectCard(project, { featured: true })}</div>`;
+      row.innerHTML = list.map((project) => `<div class="col-12">${this.renderProjectCard(project, { featured: true })}</div>`).join('');
     }
 
     renderProjectGrid(projects) {
@@ -855,6 +881,13 @@
       if (!timeline) return;
       if (section.aria_label) timeline.setAttribute('aria-label', section.aria_label);
 
+      // Section aria-label — derived from the localized section title so
+      // screen-readers announce the same heading as the visible H2.
+      const expSection = document.querySelector('.experience-section');
+      if (expSection && section.title) {
+        expSection.setAttribute('aria-label', section.title);
+      }
+
       const titleEl = document.querySelector('.experience-section .section-title');
       const subtitleEl = document.querySelector('.experience-section .section-subtitle');
       if (titleEl && section.title) titleEl.textContent = section.title;
@@ -877,6 +910,8 @@
       const locationMarkup = job.location ? `<span class="timeline-divider">${this.escape(ui.divider)}</span><span>${this.escape(job.location)}</span>` : '';
       const durationMarkup = job.duration_text ? `
         <span class="timeline-meta-item"><i class="bi bi-clock"></i>${this.escape(job.duration_text)}</span>` : '';
+      const programMarkup = job.program ? `
+        <span class="timeline-meta-item"><i class="bi bi-award"></i>${this.escape(job.program)}</span>` : '';
       const highlightsMarkup = job.highlights?.length ? `
         <div class="timeline-body mt-3">
           <ul class="timeline-list">${job.highlights.map((h) => `<li>${this.escape(h)}</li>`).join('')}</ul>
@@ -899,6 +934,7 @@
             <div class="timeline-meta">
               <span class="timeline-meta-item"><i class="bi bi-calendar3"></i>${this.escape(dateLabel)}</span>
               ${durationMarkup}
+              ${programMarkup}
             </div>
             ${highlightsMarkup}
             ${this.renderTags(job.technologies)}
@@ -936,6 +972,13 @@
 
       if (!certs.length) { this.hideSection('#certificates'); return; }
       if (!grid) return;
+
+      // Section aria-label — derived from the localized section title so
+      // screen-readers announce the same heading as the visible H2.
+      const certSection = document.querySelector('.certificates-section');
+      if (certSection && section.title) {
+        certSection.setAttribute('aria-label', section.title);
+      }
       grid.innerHTML = certs.map((cert) => this.renderCertificateCard(cert, ui)).join('');
     }
 
@@ -962,6 +1005,7 @@
       const issuerBadge = cert.issuer ? `<span class="badge bg-primary mb-2">${this.escape(cert.issuer)}</span>` : '';
       const issueDate = cert.issue_date ? `<p class="certificate-card-issuer">${this.escape(issuedLabel)}: ${this.escape(cert.issue_date)}</p>` : '';
       const credId = cert.credential_id ? `<p class="certificate-card-id">${this.escape(idLabel)}: ${this.escape(cert.credential_id)}</p>` : '';
+      const desc = cert.description ? `<p class="certificate-card-description">${this.escape(cert.description)}</p>` : '';
 
       return `
         <div class="col-sm-6 col-lg-4">
@@ -970,7 +1014,7 @@
             <div class="certificate-card-body">
               ${issuerBadge}
               <h4 class="certificate-card-title">${this.escape(this.safe(cert.short_name, cert.name))}</h4>
-              ${issueDate}${credId}
+              ${issueDate}${credId}${desc}
             </div>
             <div class="certificate-card-footer">${verifyLink}${issuerLink}</div>
           </article>
@@ -1047,7 +1091,7 @@
     }
 
     renderContactFooter(footerUi) {
-      const contactFooter = document.querySelector('.site-footer .footer-contact-link[href^="mailto:"]');
+      const contactFooter = document.querySelector('.site-footer .footer-contact-link');
       if (contactFooter && footerUi?.email_label) {
         const span = contactFooter.querySelector('span');
         if (span) span.textContent = footerUi.email_label;
@@ -1081,7 +1125,7 @@
       }
 
       const info = this.data.contact?.contact_info;
-      const footerEmail = document.querySelector('.footer-contact-link[href^="mailto:"]');
+      const footerEmail = document.querySelector('.footer-contact-link');
       if (footerEmail && info?.email) {
         footerEmail.href = `mailto:${info.email}`;
         const span = footerEmail.querySelector('span');

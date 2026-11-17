@@ -31,6 +31,9 @@
   },
   "form": {
     "enabled": true,
+    "service": "web3forms",
+    "endpoint": "https://api.web3forms.com/submit",
+    "access_key": "86b66fe2-1397-40f7-87f4-a7b08c9600e3",
     "success_message": "Thank you for your message! I'll get back to you soon.",
     "error_message": "Something went wrong. Please try again later.",
     "fields": [

@@ -17,6 +17,23 @@
   },
   "experience": [
     {
+      "id": "vinrobotics",
+      "job_title": "AI Engineering Intern",
+      "company": "VinRobotics",
+      "program": "Vingroup AI20K Training Program",
+      "type": "internship",
+      "start_date": "2026-10",
+      "end_date": "2026-12",
+      "current": true,
+      "duration_text": "Oct 2026 – Dec 2026",
+      "highlights": [
+        "Selected to participate in the Vingroup AI20K Training Program and undertake an internship at VinRobotics.",
+        "Focus on applying AI engineering knowledge to practical projects, exploring AI applications, intelligent systems, and real-world AI-driven solutions."
+      ],
+      "technologies": [],
+      "order": 1
+    },
+    {
       "id": "ocean-tech",
       "job_title": "Business Analyst Intern & Software Tester Intern",
       "company": "Ocean Tech",
@@ -43,7 +60,7 @@
         "SQL",
         "Agile"
       ],
-      "order": 1
+      "order": 2
     }
   ],
   "education": {

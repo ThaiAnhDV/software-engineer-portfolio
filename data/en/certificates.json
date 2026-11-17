@@ -17,5 +17,14 @@
     },
     "alt_fallback": "Certificate"
   },
-  "certificates": []
+  "certificates": [
+    {
+      "id": "vingroup-ai20k",
+      "name": "Vingroup AI20K Training Program",
+      "short_name": "Vingroup AI20K",
+      "issuer": "Vingroup",
+      "issue_date": "2026",
+      "description": "Focus: Artificial Intelligence, AI Engineering, AI Applications. Practical Internship: VinRobotics (October – December 2026)."
+    }
+  ]
 }

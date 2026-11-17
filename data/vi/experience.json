@@ -17,6 +17,23 @@
   },
   "experience": [
     {
+      "id": "vinrobotics",
+      "job_title": "Thực tập sinh AI Engineering",
+      "company": "VinRobotics",
+      "program": "Chương trình đào tạo Vingroup AI20K",
+      "type": "internship",
+      "start_date": "2026-10",
+      "end_date": "2026-12",
+      "current": true,
+      "duration_text": "Th10 2026 – Th12 2026",
+      "highlights": [
+        "Được tuyển chọn tham gia Chương trình đào tạo Vingroup AI20K và thực tập tại VinRobotics.",
+        "Tập trung vận dụng kiến thức AI engineering vào các dự án thực tế, khám phá các ứng dụng AI, hệ thống thông minh và các giải pháp AI ứng dụng trong thực tiễn."
+      ],
+      "technologies": [],
+      "order": 1
+    },
+    {
       "id": "ocean-tech",
       "job_title": "Thực tập sinh Phân tích Nghiệp vụ & Kiểm thử Phần mềm",
       "company": "Ocean Tech",
@@ -43,7 +60,7 @@
         "SQL",
         "Agile"
       ],
-      "order": 1
+      "order": 2
     }
   ],
   "education": {

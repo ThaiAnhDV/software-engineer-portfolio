@@ -3,26 +3,26 @@
   "meta": {
     "author": "Đặng Văn Thái Anh",
     "author_title": "Kỹ sư Phần mềm",
-    "author_email": "email@example.com",
-    "author_location": "TP. Hồ Chí Minh, Việt Nam",
-    "author_website": "https://username.github.io/portfolio",
-    "github_url": "https://github.com/username",
-    "linkedin_url": "https://linkedin.com/in/username",
+    "author_email": "thaianhdang032004@gmail.com",
+    "author_location": "Ha Noi, Vietnam",
+    "author_website": "https://thaianhdv.github.io/software-engineer-portfolio",
+    "github_url": "https://github.com/ThaiAnhDV",
+    "linkedin_url": "https://www.linkedin.com/in/th%C3%A1i-anh-%C4%91%E1%BA%B7ng-v%C4%83n-4b8a47372/",
     "twitter_url": "https://twitter.com/twitter",
     "locale": "vi_VN",
-    "roles": ["Kỹ sư Phần mềm", "Lập trình viên Full Stack", "Người giải quyết vấn đề"]
+    "roles": ["Kỹ sư Phần mềm", "AI Engineer | AI Applications", "Lập trình viên Full Stack"]
   },
   "branding": {
     "site_name": "Đặng Văn Thái Anh Portfolio",
     "tagline": "Kỹ sư Phần mềm",
-    "description": "Portfolio Kỹ sư Phần mềm — Portfolio cá nhân của Kỹ sư Phần mềm AI.",
-    "keywords": ["Kỹ sư Phần mềm", "Lập trình viên Full Stack", "Lập trình viên Web", "Portfolio"],
+    "description": "Portfolio Kỹ sư Phần mềm — Chuyên về AI Engineering và AI Applications.",
+    "keywords": ["Kỹ sư Phần mềm", "Lập trình viên Full Stack", "Lập trình viên Web", "Portfolio", "AI Engineer", "AI Applications"],
     "og_image": "assets/images/og-image.png",
     "favicon": "assets/icons/favicon.svg"
   },
   "hero": {
     "greeting": "Xin chào, tôi là",
-    "headline": "Một Kỹ sư Phần mềm đầy nhiệt huyết, chuyên xây dựng những trải nghiệm số xuất sắc. Tôi tạo ra các ứng dụng web có khả năng mở rộng và các giải pháp đám mây tạo ra sự khác biệt.",
+    "headline": "Tôi xây dựng các giải pháp phần mềm và khám phá tiềm năng của AI để tạo ra những ứng dụng thông minh, thực tiễn và có khả năng mở rộng.",
     "availability": "Sẵn sàng nhận việc",
     "badge_icon": "bi-code-slash",
     "avatar": "assets/images/avatar/avatar-large.webp",
@@ -107,12 +107,13 @@
     "social_aria": "Liên kết mạng xã hội"
   },
   "seo": {
+    "author": "Đặng Văn Thái Anh",
     "title": "Đặng Văn Thái Anh — Kỹ sư Phần mềm",
-    "description": "Portfolio Kỹ sư Phần mềm — Thể hiện chuyên môn về phát triển full-stack, kiến trúc đám mây và các giải pháp có khả năng mở rộng.",
+    "description": "Kỹ sư Phần mềm chuyên về AI Engineering và AI Applications — giải pháp LLM, hệ thống RAG, AI agent và phần mềm có khả năng mở rộng.",
     "keywords": ["Kỹ sư Phần mềm", "Lập trình viên Backend", "Lập trình viên Web", "Portfolio"],
     "og_image": "assets/images/og-image.png",
     "favicon": "assets/icons/favicon.svg",
-    "canonical_url": "https://username.github.io/portfolio/",
+    "canonical_url": "https://thaianhdv.github.io/software-engineer-portfolio/",
     "theme_color": "#0d6efd",
     "locale": "vi_VN",
     "og_type": "website",

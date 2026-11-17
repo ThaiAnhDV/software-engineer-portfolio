@@ -3,26 +3,26 @@
   "meta": {
     "author": "Đặng Văn Thái Anh",
     "author_title": "Software Engineer",
-    "author_email": "email@example.com",
-    "author_location": "Ho Chi Minh City, Vietnam",
-    "author_website": "https://username.github.io/portfolio",
-    "github_url": "https://github.com/username",
-    "linkedin_url": "https://linkedin.com/in/username",
+    "author_email": "thaianhdang032004@gmail.com",
+    "author_location": "Ha Noi, Vietnam",
+    "author_website": "https://thaianhdv.github.io/software-engineer-portfolio",
+    "github_url": "https://github.com/ThaiAnhDV",
+    "linkedin_url": "https://www.linkedin.com/in/th%C3%A1i-anh-%C4%91%E1%BA%B7ng-v%C4%83n-4b8a47372/",
     "twitter_url": "https://twitter.com/twitter",
     "locale": "en_US",
-    "roles": ["Software Engineer", "Full Stack Developer", "Problem Solver"]
+    "roles": ["Software Engineer", "AI Engineer | AI Applications", "Full Stack Developer"]
   },
   "branding": {
     "site_name": "Đặng Văn Thái Anh Portfolio",
     "tagline": "Software Engineer",
-    "description": "Software Engineer Portfolio — Personal AI Software Engineer portfolio.",
+    "description": "Software Engineer Portfolio — Specializing in AI Engineering and AI Applications.",
     "keywords": ["Software Engineer", "Full Stack Developer", "Web Developer", "Portfolio"],
     "og_image": "assets/images/og-image.png",
     "favicon": "assets/icons/favicon.svg"
   },
   "hero": {
     "greeting": "Hello, I'm",
-    "headline": "A passionate Software Engineer specializing in building exceptional digital experiences. I create scalable web applications and cloud solutions that make a difference.",
+    "headline": "I build software solutions and explore the potential of AI to create intelligent, practical, and scalable applications.",
     "availability": "Available for work",
     "badge_icon": "bi-code-slash",
     "avatar": "assets/images/avatar/avatar-large.webp",
@@ -107,12 +107,13 @@
     "social_aria": "Social media links"
   },
   "seo": {
+    "author": "Đặng Văn Thái Anh",
     "title": "Đặng Văn Thái Anh — Software Engineer",
-    "description": "Software Engineer Portfolio — Showcasing expertise in full-stack development, cloud architecture, and scalable solutions.",
-    "keywords": ["Software Engineer", "Backend Developer", "Web Developer", "Portfolio"],
+    "description": "Software Engineer specializing in AI Engineering and AI Applications — LLM-powered solutions, RAG systems, AI agents, and scalable software.",
+    "keywords": ["Software Engineer", "Backend Developer", "Web Developer", "Portfolio", "AI Engineer", "AI Applications"],
     "og_image": "assets/images/og-image.png",
     "favicon": "assets/icons/favicon.svg",
-    "canonical_url": "https://username.github.io/portfolio/",
+    "canonical_url": "https://thaianhdv.github.io/software-engineer-portfolio/",
     "theme_color": "#0d6efd",
     "locale": "en_US",
     "og_type": "website",

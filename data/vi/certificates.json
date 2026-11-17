@@ -17,5 +17,14 @@
     },
     "alt_fallback": "Chứng chỉ"
   },
-  "certificates": []
+  "certificates": [
+    {
+      "id": "vingroup-ai20k",
+      "name": "Chương trình đào tạo Vingroup AI20K",
+      "short_name": "Vingroup AI20K",
+      "issuer": "Vingroup",
+      "issue_date": "2026",
+      "description": "Trọng tâm: Trí tuệ nhân tạo, AI Engineering, AI Applications. Thực tập thực tế: VinRobotics (tháng 10 – tháng 12 năm 2026)."
+    }
+  ]
 }

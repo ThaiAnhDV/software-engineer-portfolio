@@ -46,15 +46,17 @@
     },
     {
       "id": "artificial-intelligence",
-      "name": "Trí tuệ nhân tạo",
+      "name": "AI Engineering | AI Applications",
       "icon": "bi-cpu",
-      "description": "Phát triển các giải pháp phần mềm tích hợp AI.",
+      "description": "Mô hình ngôn ngữ lớn, hệ thống RAG, AI agent và các sản phẩm ứng dụng AI thực tiễn.",
       "order": 4,
       "skills": [
-        { "name": "Gemini,Claude API", "level": 80, "icon": "icons/custom/ai.svg" },
+        { "name": "Large Language Models (LLMs)", "level": 75, "icon": "icons/custom/llm.svg" },
+        { "name": "Retrieval-Augmented Generation (RAG)", "level": 70, "icon": "icons/custom/database.svg" },
+        { "name": "AI Agents", "level": 70, "icon": "icons/custom/ai.svg" },
         { "name": "Prompt Engineering", "level": 85, "icon": "icons/custom/prompt.svg" },
-        { "name": "LLM Integration", "level": 75, "icon": "icons/custom/llm.svg" },
-        { "name": "AI Workflow Design", "level": 75, "icon": "icons/custom/workflow.svg" }
+        { "name": "Semantic Search", "level": 70, "icon": "icons/custom/api.svg" },
+        { "name": "AI-powered Applications", "level": 75, "icon": "icons/custom/workflow.svg" }
       ]
     },
     {
@@ -66,7 +68,7 @@
       "skills": [
         { "name": "SQL Server", "level": 85, "icon": "logos/sqlserver.svg" },
         { "name": "Firestore", "level": 75, "icon": "logos/firebase.svg" },
-        { "name": "My SQL", "level": 75, "icon": "logos/firebase.svg" }
+        { "name": "My SQL", "level": 75, "icon": "logos/sql.svg" }
       ]
     },
     {

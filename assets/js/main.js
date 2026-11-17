@@ -228,8 +228,19 @@
       submitBtn.classList.add('is-loading');
       submitBtn.disabled = true;
 
-      // Simulate form submission (replace with actual API call)
-      await new Promise((resolve) => setTimeout(resolve, 1500));
+      const email = this.getContactEmail();
+      const name = form.querySelector('[name="name"]')?.value.trim() || '';
+      const from = form.querySelector('[name="email"]')?.value.trim() || '';
+      const subject = form.querySelector('[name="subject"]')?.value.trim() || '';
+      const message = form.querySelector('[name="message"]')?.value.trim() || '';
+
+      // Send via the configured form service (Web3Forms -> owner inbox).
+      // Falls back to a mailto: draft if the service is unreachable.
+      const sent = await this.sendViaService({ name, from, subject, message });
+      if (!sent && email) {
+        const body = `Name: ${name}\nEmail: ${from}\n\n${message}`;
+        window.location.href = `mailto:${email}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+      }
 
       // Show success state
       submitBtn.classList.remove('is-loading');
@@ -243,6 +254,43 @@
         submitBtn.classList.remove('is-success');
         submitBtn.disabled = false;
       }, 3000);
+    }
+
+    /**
+     * POST the message to the Web3Forms API endpoint from
+     * contact.form.endpoint. Returns true when the mail was accepted.
+     * Falls back to a mailto: draft (handled by the caller) if the
+     * service is unreachable.
+     * @returns {Promise<boolean>}
+     */
+    async sendViaService({ name, from, subject, message }) {
+      const formConfig = window.PortfolioRenderer?.data?.contact?.form || {};
+      const endpoint = formConfig.endpoint || '';
+      const accessKey = formConfig.access_key || '';
+      if (!endpoint || !accessKey) return false;
+      try {
+        const response = await fetch(endpoint, {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+          body: JSON.stringify({
+            access_key: accessKey,
+            name,
+            email: from,
+            subject: subject || `Portfolio contact from ${name}`,
+            message
+          })
+        });
+        if (!response.ok) return false;
+        const data = await response.json().catch(() => ({}));
+        return data?.success === true;
+      } catch (error) {
+        console.warn('[FormHandler] Form service unreachable:', error);
+        return false;
+      }
+    }
+
+    getContactEmail() {
+      return window.PortfolioRenderer?.data?.contact?.contact_info?.email || '';
     }
 
     validateForm(form) {
@@ -420,6 +468,8 @@
       this.wordIndex = 0;
       this.charIndex = 0;
       this.isDeleting = false;
+      this.timer = null;
+      this.destroyed = false;
       this.init();
     }
 
@@ -428,8 +478,27 @@
       this.type();
     }
 
+    destroy() {
+      this.destroyed = true;
+      if (this.timer) clearTimeout(this.timer);
+      this.timer = null;
+    }
+
+    restart(words) {
+      if (Array.isArray(words) && words.length) this.words = words;
+      this.wordIndex = 0;
+      this.charIndex = 0;
+      this.isDeleting = false;
+      this.destroyed = false;
+      if (this.timer) clearTimeout(this.timer);
+      this.type();
+    }
+
     type() {
+      if (this.destroyed) return;
+      if (!this.words.length) return;
       const currentWord = this.words[this.wordIndex];
+      if (!currentWord) return;
 
       if (this.isDeleting) {
         this.element.textContent = currentWord.substring(0, this.charIndex - 1);
@@ -450,8 +519,36 @@
         typeSpeed = 500;
       }
 
-      setTimeout(() => this.type(), typeSpeed);
+      this.timer = setTimeout(() => this.type(), typeSpeed);
     }
+  }
+
+  // =========================================================
+  // TYPEWRITER BOOTSTRAP (locale-aware, restarts on re-render)
+  // =========================================================
+  function typewriterWords() {
+    const profileData = window.PortfolioRenderer?.data?.profile;
+    const roles = Array.isArray(profileData?.meta?.roles) ? profileData.meta.roles : null;
+    const authorTitle = profileData?.meta?.author_title;
+    return (roles && roles.length ? roles : null)
+      || (authorTitle ? [authorTitle] : null);
+  }
+
+  function startTypewriter() {
+    const typewriterElement = document.getElementById('typewriter');
+    if (!typewriterElement) return;
+    const words = typewriterWords();
+    if (!words || !words.length) return;
+    if (window.__portfolioTypewriter) {
+      window.__portfolioTypewriter.restart(words);
+      return;
+    }
+    window.__portfolioTypewriter = new Typewriter(typewriterElement, {
+      words,
+      typeSpeed: 80,
+      deleteSpeed: 40,
+      pauseDelay: 2500
+    });
   }
 
   // =========================================================
@@ -558,23 +655,10 @@
     // Initialize typewriter using title(s) provided by the renderer
     // (profile.meta.roles[] or profile.meta.author_title).
     // Renders nothing if no data is available.
-    const typewriterElement = document.getElementById('typewriter');
-    if (typewriterElement) {
-      const profileData = window.PortfolioRenderer?.data?.profile;
-      const roles = Array.isArray(profileData?.meta?.roles) ? profileData.meta.roles : null;
-      const authorTitle = profileData?.meta?.author_title;
-      const wordsFromData = (roles && roles.length ? roles : null)
-        || (authorTitle ? [authorTitle] : null);
-
-      if (wordsFromData && wordsFromData.length) {
-        new Typewriter(typewriterElement, {
-          words: wordsFromData,
-          typeSpeed: 80,
-          deleteSpeed: 40,
-          pauseDelay: 2500
-        });
-      }
-    }
+    // Restarts on every re-render so the roles follow the active locale
+    // (EN <-> VI switch) instead of going stale.
+    startTypewriter();
+    window.addEventListener('portfolio:rendered', startTypewriter);
 
     // Mark body as loaded
     document.body.classList.add('js-loaded');
